@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import { Product, Footer, Cart, Banner, Layout, Navbar } from "../components";
 
 const Home = () => {
   return (
     <>
-      <div className="text-5xl">Empowering Creativity</div>
+      <Banner />
+      <div>stuff</div>
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
