@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className="bg-transparent w-screen h-16 z-20 fixed">
       <div className="px-3 justify-between items-center w-full h-full flex border-b">
-        <ul className="hidden md:flex">
+        <ul className="hidden md:flex heading">
           <li className="pl-8 cursor-pointer">
             <Link href="/">Home</Link>
           </li>
