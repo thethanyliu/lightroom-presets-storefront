@@ -3,19 +3,19 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div className="bg-transparent w-screen h-16 z-20 fixed">
-      <div className="px-3 justify-between items-center w-full h-full flex border-b">
-        <ul className="hidden md:flex heading">
-          <li className="pl-8 cursor-pointer">
+    <div>
+      <div>
+        <ul>
+          <li className="home-link">
             <Link href="/">Home</Link>
           </li>
-          <li className="pl-5 cursor-pointer">
+          <li>
             <Link href="/products">Products</Link>
           </li>
-          <li className="pl-5 cursor-pointer">
+          <li>
             <Link href="/tutorial">Tutorial</Link>
           </li>
-          <li className="pl-5 cursor-pointer">
+          <li>
             <Link href="/contact-us">Contact</Link>
           </li>
         </ul>
