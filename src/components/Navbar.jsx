@@ -3,20 +3,37 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="nb">
       <div>
-        <ul>
+        <ul className="navbar-ul">
           <li className="home-link">
-            <Link href="/">Home</Link>
+            <Link style={{ textDecoration: "none", color: "black" }} href="/">
+              Home
+            </Link>
           </li>
           <li>
-            <Link href="/products">Products</Link>
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              href="/products"
+            >
+              Products
+            </Link>
           </li>
           <li>
-            <Link href="/tutorial">Tutorial</Link>
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              href="/tutorial"
+            >
+              Tutorial
+            </Link>
           </li>
           <li>
-            <Link href="/contact-us">Contact</Link>
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              href="/contact-us"
+            >
+              Contact
+            </Link>
           </li>
         </ul>
       </div>
