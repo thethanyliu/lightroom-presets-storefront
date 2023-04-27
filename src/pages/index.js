@@ -3,11 +3,11 @@ import { Product, Footer, Cart, Banner, Layout, Navbar } from "../components";
 import { client } from "../lib/client"
 
 const Home = ({ products, banners }) => {
+  console.log(process.env)
   return (
     <>
     <Navbar />
       <Banner />
-      <div>{products?.map(product => product.name)}</div>
       <Footer />
     </>
   );

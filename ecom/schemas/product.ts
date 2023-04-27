@@ -4,14 +4,14 @@ export default {
     type: "document",
     fields: [
         {
-            name: "image",
-            title: "Image",
-            type: "array",
-            of: [{ type: "image" }],
+            name: 'image',
+            title: 'Image',
+            type: 'array',
+            of: [{ type: 'image' }],
             options: {
-                hotspot: true,
-            },
-        },
+              hotspot: true,
+            }
+          },
         {
             name: "name",
             title: "Name",
@@ -33,12 +33,12 @@ export default {
         },
         {
             name: "discount",
-            title: "discount",
+            title: "Discount",
             type: "string",
         },
         {
             name: "rating",
-            title: "rating",
+            title: "Rating",
             type: "string"
         },
         {
