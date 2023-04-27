@@ -20,20 +20,26 @@ body,
 }
 
 .bannerImage {
-  background-image: url("../assets/banner.jpg");
+  background-image: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0),
+      rgba(10, 10, 10, 0.7)
+    )
+    , url("../assets/banner.png");
   background-size: auto;
   background-position: center;
   background-repeat: no-repeat;
   text-align: center;
   width: full;
   padding-top: 8rem;
-  height: 80vh;
+  height: 40vh;
 }
 
 .bannerText {
   font-size: 2.5rem;
   font-weight: 700;
   padding-bottom: 0.5rem;
+  color: white;
 }
 
 .bannerButton {
@@ -48,6 +54,7 @@ body,
 
 .navbar-ul {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .products {
@@ -71,7 +78,12 @@ body,
 }
 
 li {
-  padding-left: 1.5rem;
-  cursor: pointer;
-  font: small-caps 18px/1 "Fira Sans";
+  padding-left: 2rem;
 }
+
+.feature {
+  text-align: center;
+  font-weight: 700;
+  padding: 1.125rem 0 1.125rem 0;
+}
+

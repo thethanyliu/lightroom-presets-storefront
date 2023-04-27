@@ -9,7 +9,7 @@ const Banner = () => {
         Empowering Creativity
       </div>
       <div>
-        <Link href="/">
+        <Link href="/products">
           <button className="bannerButton" type="button">Shop Now</button>
         </Link>
       </div>

@@ -23,6 +23,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'feature',
+      title: 'feature',
+      type: 'boolean',
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',

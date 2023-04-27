@@ -6,14 +6,14 @@ const Navbar = () => {
     <div className="nb">
       <div>
         <ul className="navbar-ul">
-          <li className="home-link">
-            <Link style={{ textDecoration: "none", color: "black" }} href="/">
+          <li>
+            <Link style={{ textDecoration: "none", color: "white" }} href="/">
               Home
             </Link>
           </li>
           <li>
             <Link
-              style={{ textDecoration: "none", color: "black" }}
+              style={{ textDecoration: "none", color: "white" }}
               href="/products"
             >
               Products
@@ -21,7 +21,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              style={{ textDecoration: "none", color: "black" }}
+              style={{ textDecoration: "none", color: "white" }}
               href="/tutorial"
             >
               Tutorial
@@ -29,7 +29,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              style={{ textDecoration: "none", color: "black" }}
+              style={{ textDecoration: "none", color: "white" }}
               href="/contact-us"
             >
               Contact

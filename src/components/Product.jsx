@@ -6,6 +6,7 @@ const Product = ({ product }) => {
   return (
     <div>
       <Link
+        style={{ textDecoration: "none", color: "black" }}
         href={`/products/${product.slug.current}`}
       >
         <div className="product">
