@@ -6,7 +6,7 @@ export const client = createClient({
     dataset: "production",
     apiVersion: "2023-04-26",
     useCdn: true,
-    token: process.env.NEXT_PUBLIC_PROJECT_ID, 
+    token: process.env.NEXT_PUBLIC_SANITY_TOKEN, 
 });
 
 const builder = imageUrlBuilder(client);
