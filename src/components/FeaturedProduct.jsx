@@ -1,12 +1,18 @@
 import React from "react";
-import { urlFor } from "../lib/client";
 import Product from "./Product";
 
-const FeaturedProduct = ({ product }) => {
+const FeaturedProduct = ({ featuredProducts }) => {
+  console.log(featuredProducts)
   return (
-    <div>
-      <h1 className="feature">Featured Product</h1>
-      <Product product={product} />
+    <div className="feature">
+      <h1 className="feature-text">Featured Products</h1>
+      <div className="feature-products">
+        {featuredProducts.map((product) => {
+          return <Product product={product} />
+        })}
+      </div>
+
+      {/* <div className="curve"></div> */}
     </div>
   );
 };

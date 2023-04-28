@@ -1,15 +1,24 @@
 import React from "react";
-import { Footer, Cart, Banner, Layout, Navbar, FeaturedProduct } from "../components";
-import { client } from "../lib/client"
+import {
+  Footer,
+  Cart,
+  Banner,
+  Layout,
+  Navbar,
+  FeaturedProduct,
+} from "../components";
+import { client } from "../lib/client";
 
 const Home = ({ products, banners }) => {
   return (
-    <>
-    <Navbar />
+    <div className="home">
+      <Navbar />
       <Banner />
-    <FeaturedProduct product={products.find((product) => product.feature)} />
+      <FeaturedProduct
+        featuredProducts={products.filter((product) => product.feature)}
+      />
       <Footer />
-    </>
+    </div>
   );
 };
 
@@ -21,8 +30,8 @@ export const getServerSideProps = async () => {
   const banners = await client.fetch(bannerQuery);
 
   return {
-    props: {products, banners}
-  }
-}
+    props: { products, banners },
+  };
+};
 
 export default Home;

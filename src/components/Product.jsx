@@ -4,7 +4,7 @@ import { urlFor } from "../lib/client";
 
 const Product = ({ product }) => {
   return (
-    <div>
+    <div className="product-card">
       <Link
         style={{ textDecoration: "none", color: "black" }}
         href={`/products/${product.slug.current}`}
@@ -14,11 +14,12 @@ const Product = ({ product }) => {
             src={urlFor(product.image && product.image[0])}
             width={350}
             height={350}
+            className="product-image"
             alt="cover image"
           />
           <div className="p-title">{product.name}</div>
           <div className="p-price">${product.price}</div>
-        </div>{" "}
+        </div>
       </Link>
     </div>
   );

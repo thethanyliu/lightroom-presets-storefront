@@ -5,9 +5,14 @@ body,
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 ::-webkit-scrollbar {
   width: 0px;
+}
+
+.home {
+  position: relative;
 }
 
 .nb {
@@ -69,21 +74,85 @@ body,
   align-items: center;
 }
 
-.p-title {
-  text-align: center;
-}
-
-.p-price {
-  text-align: center;
-}
-
 li {
   padding-left: 2rem;
 }
 
 .feature {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5rem;
+}
+
+.feature-text {
   text-align: center;
   font-weight: 700;
-  padding: 1.125rem 0 1.125rem 0;
+  padding: 1.125rem 0 0 0;
 }
+
+.feature-products {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: 1.5rem 35rem 0 35rem;
+}
+
+.product-card {
+  cursor: pointer;
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+ color: #324d67;
+}
+
+.product-image {
+  border-radius: 15px;
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover{
+  transform: scale(1.05,1.05)
+}
+
+.p-title {
+  margin-top: 8px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.p-price {
+  margin: 5px 0 10px 0;
+  font-weight: 800;
+  text-align: center;
+}
+
+
+/* .curve {
+  position: absolute;
+  height: 225px;
+  width: 100%;
+  bottom: 0;
+}
+
+
+.curve::before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 55%;
+  height: 100%;
+  background-color: white;
+}
+
+.curve::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 55%;
+  height: 100%;
+  background-color: #3c31dd;
+  transform: translate(70%, 40%);
+  z-index: -1;
+} */
 
