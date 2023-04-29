@@ -11,6 +11,7 @@ body,
   width: 0px;
 }
 
+
 .home {
   position: relative;
 }
@@ -22,11 +23,41 @@ body,
 
 .nb {
   background: transparent;
+  display: flex;
   z-index: 20;
   position: fixed;
+  justify-content: space-between;
   height: 4rem;
   width: 100vw;
   padding-top: 1.25rem;
+}
+
+.cart {
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.4s ease;
+  border: none;
+  background-color: transparent;
+  padding-right: 12px;
+}
+
+.cart:hover {
+  transform: scale(1.05, 1.05);
+}
+
+.cart-qty {
+  position: absolute;
+  right: 8px;
+  font-size: 8px;
+  color: #eee;
+  background-color: #f02d34;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: 600;
 }
 
 .bannerImage {
@@ -43,6 +74,8 @@ body,
   width: full;
   padding-top: 8rem;
   height: 40vh;
+  border-radius: 15px;
+  margin: 0 5px 0 5px;
 }
 
 .bannerText {
@@ -128,4 +161,17 @@ li {
   margin: 5px 0 10px 0;
   font-weight: 800;
   text-align: center;
+}
+
+.footer {
+  color: #000000;
+  text-align: center;
+  margin-top: 20px;
+  padding: 30px 10px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
 }
