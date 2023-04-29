@@ -18,7 +18,7 @@ const Product = ({ product }) => {
             alt="cover image"
           />
           <div className="p-title">{product.name}</div>
-          <div className="p-price">${product.price}</div>
+          <div className="p-price">${product.price} CAD</div>
         </div>
       </Link>
     </div>
