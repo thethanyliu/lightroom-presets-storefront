@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { urlFor } from "../lib/client";
 
-const Product = ({ product, dimensions }) => {
+const Product = ({ product, width, height }) => {
   return (
     <div className="product-card">
       <Link
@@ -12,8 +12,8 @@ const Product = ({ product, dimensions }) => {
         <div className="product">
           <img
             src={urlFor(product.productImage)}
-            width={dimensions}
-            height={dimensions}
+            width={width}
+            height={height}
             className="product-image"
             alt="cover image"
           />

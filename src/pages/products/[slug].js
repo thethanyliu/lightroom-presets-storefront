@@ -1,19 +1,17 @@
 import React from "react";
-import { useState } from "react";
 import { client, urlFor } from "../../lib/client";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import { Product, ProductDesc } from "../../components";
+import { Product, ProductDesc, Info } from "../../components";
 
 const ProductDetails = ({ product, products }) => {
-  const { productImage, images, name, price, relatedProducts } = product;
-  const [index, setIndex] = useState(true);
+  const { productImage, images, name, price, relatedProducts, presetNumber } = product;
 
   return (
     <>
       <div className="product-details">
         <div className="image-container">
           <img
-            src={urlFor(index ? productImage : images[index])}
+            src={urlFor(productImage && productImage)}
             className="product-details-image"
             width={450}
             height={450}
@@ -23,12 +21,6 @@ const ProductDetails = ({ product, products }) => {
               return (
                 <img
                   src={urlFor(image)}
-                  onMouseEnter={() => {
-                    setIndex(i);
-                  }}
-                  onMouseLeave={() => {
-                    setIndex(true);
-                  }}
                   className="other-image"
                 />
               );
@@ -44,16 +36,27 @@ const ProductDetails = ({ product, products }) => {
             <AiFillStar />
             <AiOutlineStar />
           </div>
+          <div className="product-details-info">
+            <Info />
+          </div>
+          
           <div className="details-price">${price} CAD</div>
-          <ProductDesc />
+          <ProductDesc presetNumber={presetNumber} />
+          <div className="product-detail-buttons">
+            <button type="botton" className="buy-now">Buy Now</button>
+            <button type="button" className="add-to-cart">Add to Cart</button>
+          </div>
         </div>
+      </div>
+      <div>
+        <h1>What's Diffing</h1>
       </div>
       <div className="recommended-products-container">
         <h2 className="rec-products">Recommended Products</h2>
         <div className="recommended-products">
           {products.map((product) => {
             if (relatedProducts.includes(product.name)) {
-                return <Product product={product} dimensions={250} />
+                return <Product product={product} width={250} height={250} />
             }
           }
           )}

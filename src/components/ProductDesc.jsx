@@ -1,26 +1,18 @@
-import React from 'react'
+import React from "react";
+import Link from "next/link";
 
-const ProductDesc = () => {
+const ProductDesc = ({ presetNumber }) => {
   return (
     <div>
-      Presets
-Best for   images.
-What you will get:
- Custom Lightroom Desktop Presets
- Custom Lightroom Mobile Presets (DNG Files)
-Free support
-Instant download as well as lifetime access
-
-Lightroom Mobile is completely free. No payments or subscriptions needed.
-Don’t know how to download and use our presets? No worries, you can follow our instructions here.
-Have further questions or concerns, contact us here and we will be more than happy to assist you.
-Presets Included:
-Jungle Glow
-Moody Greens 
-Moody Greens 2.0
-
+      Presets best for  images. <br />
+      What you will get: <br /> -<b>{presetNumber} </b>Custom Lightroom Desktop
+      Presets <br /> -<b>{presetNumber}</b> Custom Lightroom Mobile Presets (DNG
+      Files) <br />
+      Lightroom Mobile is completely free. No payments or subscriptions needed.
+      Don’t know how to download and use our presets? No worries, you can follow
+      our instructions <Link href="/tutorial" style={{ textDecoration: "none", color: "black" }}>here</Link>.
     </div>
-  )
-}
+  );
+};
 
-export default ProductDesc
+export default ProductDesc;

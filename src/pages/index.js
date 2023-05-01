@@ -4,6 +4,7 @@ import {
   Banner,
   Layout,
   FeaturedProduct,
+  Info,
 } from "../components";
 import { client } from "../lib/client";
 
@@ -14,6 +15,7 @@ const Home = ({ products }) => {
       <FeaturedProduct
         featuredProducts={products.filter((product) => product.feature)}
       />
+      <Info />
     </div>
   );
 };
