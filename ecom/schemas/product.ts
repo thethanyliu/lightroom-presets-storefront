@@ -4,8 +4,13 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'image',
-      title: 'Image',
+      name: 'productImage',
+      title: 'Product Image',
+      type: 'image'
+    },
+    {
+      name: 'images',
+      title: 'Images',
       type: 'array',
       of: [{type: 'image'}],
       options: {
@@ -40,6 +45,17 @@ export default {
       name: 'price',
       title: 'Price',
       type: 'number',
+    },
+    {
+      name: 'presetNumber',
+      title: 'Preset Number',
+      type: 'number',
+    },
+    {
+      name: 'relatedProducts',
+      title: 'Related Products',
+      type: 'array',
+      of: [{ type: 'string' }],
     },
     {
       name: 'discount',
