@@ -1,14 +1,13 @@
 import React from "react";
-import { client } from "../lib/client";
-import { Product, Navbar } from "@/components";
+import { client } from "../../lib/client";
+import { Product } from "@/components";
 
 const product = ({ products }) => {
   return (
     <>
-      <Navbar />
       <div className="products">
         {products?.map((product) => {
-          return <Product product={product} />;
+          return <Product product={product} dimensions={350} />;
         })}
       </div>
     </>

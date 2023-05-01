@@ -8,11 +8,9 @@ const FeaturedProduct = ({ featuredProducts }) => {
       <h1 className="feature-text">Featured Products</h1>
       <div className="feature-products">
         {featuredProducts.map((product) => {
-          return <Product product={product} />
+          return <Product product={product} dimensions={350} />
         })}
       </div>
-
-      {/* <div className="curve"></div> */}
     </div>
   );
 };

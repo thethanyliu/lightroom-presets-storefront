@@ -3,18 +3,15 @@ import Link from "next/link";
 import { AiOutlineShopping } from "react-icons/ai";
 
 const Navbar = () => {
+  const linkStyle = { textDecoration: "none", color: "black", fontWeight: 700 }
+
   return (
     <div className="nb">
       <div>
         <ul className="navbar-ul">
           <li>
-            <Link style={{ textDecoration: "none", color: "white" }} href="/">
-              Home
-            </Link>
-          </li>
-          <li>
             <Link
-              style={{ textDecoration: "none", color: "white" }}
+              style={linkStyle}
               href="/products"
             >
               Products
@@ -22,7 +19,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              style={{ textDecoration: "none", color: "white" }}
+              style={linkStyle}
               href="/tutorial"
             >
               Tutorial
@@ -30,7 +27,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              style={{ textDecoration: "none", color: "white" }}
+              style={linkStyle}
               href="/contact-us"
             >
               Contact

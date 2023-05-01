@@ -51,10 +51,5 @@ export default {
       title: 'Rating',
       type: 'string',
     },
-    {
-      name: 'details',
-      title: 'Details',
-      type: 'string',
-    },
   ],
 }
