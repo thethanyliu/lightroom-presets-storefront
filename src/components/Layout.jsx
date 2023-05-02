@@ -5,7 +5,7 @@ import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <div>
       <Head>
         <title>PnutPresets</title>
       </Head>
@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
       <footer>
         <Footer />
       </footer>
-    </>
+    </div>
   );
 };
 

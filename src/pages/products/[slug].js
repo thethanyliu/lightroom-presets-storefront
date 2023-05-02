@@ -1,10 +1,12 @@
-import React from "react";
+import React, { use } from "react";
 import { client, urlFor } from "../../lib/client";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { Product, ProductDesc, Info } from "../../components";
+import { useStateContext } from "@/context/StateContext";
 
 const ProductDetails = ({ product, products }) => {
   const { productImage, images, name, price, relatedProducts, presetNumber } = product;
+  const { onAddToCart } = useStateContext()
 
   return (
     <>
@@ -44,7 +46,7 @@ const ProductDetails = ({ product, products }) => {
           <ProductDesc presetNumber={presetNumber} />
           <div className="product-detail-buttons">
             <button type="botton" className="buy-now">Buy Now</button>
-            <button type="button" className="add-to-cart">Add to Cart</button>
+            <button type="button" className="add-to-cart" onClick={() => onAddToCart(product)}>Add to Cart</button>
           </div>
         </div>
       </div>

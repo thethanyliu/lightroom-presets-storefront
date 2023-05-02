@@ -1,9 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import { AiOutlineShopping } from "react-icons/ai";
+import { useStateContext } from "@/context/StateContext";
+import { Cart } from "./"
 
 const Navbar = () => {
   const linkStyle = { textDecoration: "none", color: "black", fontWeight: 700 }
+  const { showCart, totalQty } = useStateContext()
+
 
   return (
     <div className="nb">
@@ -38,9 +42,10 @@ const Navbar = () => {
       <div>
         <button type="button" className="cart" onClick="">
           <AiOutlineShopping />
-          <span className="cart-qty">1</span>
+          <span className={totalQty == 0 ? "hidden" : "cart-qty"}>{totalQty}</span>
         </button>
       </div>
+      {showCart && <Cart />}
     </div>
   );
 };

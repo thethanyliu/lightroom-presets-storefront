@@ -273,6 +273,7 @@ li {
 
 .product-detail-buttons {
   display: flex;
+  padding: 5px 0 10px 0;
 }
 
 .buy-now {
@@ -310,4 +311,9 @@ li {
 
 .add-to-cart:hover {
   transform: scale(1.05, 1.05);
+}
+
+
+.hidden {
+  display: none;
 }
