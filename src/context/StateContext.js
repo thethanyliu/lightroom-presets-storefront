@@ -4,23 +4,11 @@ import { toast } from "react-hot-toast";
 const Context = createContext();
 
 export const StateContext = ({ children }) => {
-  let showCart;
-  let cartItems;
-  let totalPrice;
-  let totalQty;
-
-  useEffect(() => {
-    localStorage.setItem("Show Cart", showCart)
-    localStorage.setItem("Cart Items", cartItems)
-    localStorage.setItem("Total Price", totalPrice)
-    localStorage.setItem("Total Qty", totalQty)
-  }, [showCart, cartItems, totalPrice, totalQty])
-
+  
 
   const onAddToCart = (product) => {
-    console.log(1)
     const productInCart = cartItems.find((item) => item.name === product.name);
-    totalPrice += product.price
+    totalPrice += product.price;
     totalQty++;
 
     if (productInCart) {
@@ -33,9 +21,9 @@ export const StateContext = ({ children }) => {
         }
       });
 
-      cartItems = updatedCartItems
+      cartItems = updatedCartItems;
     } else {
-      cartItems = [...cartItems, { ...product, quantity: 1 }]
+      cartItems = [...cartItems, { ...product, quantity: 1 }];
     }
     toast.success(`1 ${product.name} added to cart!`);
   };
