@@ -356,9 +356,10 @@ li {
 }
 
 .empty-cart{
-  margin:40px;
+  padding:40px;
   text-align:center;
 }
+
 .empty-cart h3{
   font-weight: 600;
   font-size: 20px;
@@ -366,4 +367,9 @@ li {
 
 .cart-pics {
   border-radius: 8px;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
 }
