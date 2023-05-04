@@ -1,13 +1,13 @@
 import React, { useRef } from "react";
 import Link from "next/link";
 import { AiOutlineLeft, AiOutlineShopping } from "react-icons/ai";
-import { toast } from "react-hot-toast";
 import { useStateContext } from "@/context/StateContext";
 import { urlFor } from "@/lib/client";
 
 const Cart = () => {
   const cartRef = useRef();
-  const { totalPrice, totalQty, cartItems, setShowCart, removeFromCart } = useStateContext();
+  const { totalPrice, totalQty, cartItems, setShowCart, removeFromCart } =
+    useStateContext();
 
   return (
     <div className="cart-container" ref={cartRef}>
@@ -23,7 +23,11 @@ const Cart = () => {
         <div className="empty-cart">
           <AiOutlineShopping size={100} /> <h3>Your shopping bag is empty</h3>
           <Link href="/">
-            <button type="button" onClick={() => setShowCart(false)}>
+            <button
+              type="button"
+              className="continue-btn"
+              onClick={() => setShowCart(false)}
+            >
               Continue Shopping
             </button>
           </Link>
@@ -42,7 +46,13 @@ const Cart = () => {
                 <h4>{item.name}</h4>
                 <div>
                   <h5>{item.quantity}</h5>
-                  <button type="button" className="remove-btn" onClick={() => removeFromCart(item, index)}>Remove</button>
+                  <button
+                    type="button"
+                    className="remove-btn"
+                    onClick={() => removeFromCart(item, index)}
+                  >
+                    Remove
+                  </button>
                 </div>
               </div>
             </div>
@@ -56,7 +66,9 @@ const Cart = () => {
             <h3>Subtotal: ${totalPrice}</h3>
           </div>
           <div className="pay-btn-container">
-            <button type="button" className="pay-btn">Pay Now</button>
+            <button type="button" className="pay-btn">
+              Pay Now
+            </button>
           </div>
         </div>
       )}

@@ -3,10 +3,17 @@ import { client } from "../../lib/client";
 import { Product } from "@/components";
 
 const product = ({ products }) => {
+  const uniqProducts = [];
+  products.forEach((item) => {
+    if (!uniqProducts.includes(item)) {
+      uniqProducts.push(item);
+    }
+  });
+
   return (
     <>
       <div className="products">
-        {products?.map((product) => {
+        {uniqProducts?.map((product) => {
           return <Product product={product} width={350} height={350} />;
         })}
       </div>
