@@ -418,3 +418,10 @@ li {
 .pay-btn:hover {
   transform: scale(1.05, 1.05);
 }
+
+.remove-btn {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  text-decoration: underline;
+}

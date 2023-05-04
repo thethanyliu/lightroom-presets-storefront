@@ -1,17 +1,16 @@
 import React, { useRef } from "react";
 import Link from "next/link";
 import { AiOutlineLeft, AiOutlineShopping } from "react-icons/ai";
-import { TiDeleteOutline } from "react-icons/ti";
 import { toast } from "react-hot-toast";
 import { useStateContext } from "@/context/StateContext";
 import { urlFor } from "@/lib/client";
 
 const Cart = () => {
   const cartRef = useRef();
-  const { totalPrice, totalQty, cartItems, setShowCart } = useStateContext();
+  const { totalPrice, totalQty, cartItems, setShowCart, removeFromCart } = useStateContext();
 
   return (
-    <div className="cart-container">
+    <div className="cart-container" ref={cartRef}>
       <button
         type="button"
         className="cart-heading"
@@ -31,7 +30,7 @@ const Cart = () => {
         </div>
       ) : (
         <div className="cart-items">
-          {cartItems.map((item) => (
+          {cartItems.map((item, index) => (
             <div className="cart-product">
               <img
                 src={urlFor(item?.productImage)}
@@ -43,7 +42,7 @@ const Cart = () => {
                 <h4>{item.name}</h4>
                 <div>
                   <h5>{item.quantity}</h5>
-                  <button type="button">Remove</button>
+                  <button type="button" className="remove-btn" onClick={() => removeFromCart(item, index)}>Remove</button>
                 </div>
               </div>
             </div>
