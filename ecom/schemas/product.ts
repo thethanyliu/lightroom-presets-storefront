@@ -23,6 +23,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'DNG_zip',
+      title: 'DNG Zip',
+      type: 'file',
+    },
+    {
       name: 'category',
       title: 'Category',
       type: 'string',
