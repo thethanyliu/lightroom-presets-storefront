@@ -23,8 +23,13 @@ export default {
       type: 'string',
     },
     {
-      name: 'DNG_zip',
+      name: 'dng_zip',
       title: 'DNG Zip',
+      type: 'file',
+    },
+    {
+      name: 'zip_file',
+      title: 'Zip file',
       type: 'file',
     },
     {

@@ -3,11 +3,33 @@ import Link from "next/link";
 import { AiOutlineLeft, AiOutlineShopping } from "react-icons/ai";
 import { useStateContext } from "@/context/StateContext";
 import { urlFor } from "@/lib/client";
+import getStripe from "@/lib/getStripe";
+import { toast } from "react-hot-toast";
 
 const Cart = () => {
   const cartRef = useRef();
   const { totalPrice, totalQty, cartItems, setShowCart, removeFromCart } =
     useStateContext();
+
+  const handleCheckout = async () => {
+    const stripe = await getStripe();
+
+    const res = await fetch("/api/stripe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(cartItems),
+    });
+
+    if (res.statusCode === 500) return console.log("Error");
+
+    const data = await res.json()
+
+    toast.loading("Redirecting...")
+
+    stripe.redirectToCheckout({ sessionId: data.id }) // an instance of a checkout
+  };
 
   return (
     <div className="cart-container" ref={cartRef}>
@@ -66,7 +88,7 @@ const Cart = () => {
             <h3>Subtotal: ${totalPrice}</h3>
           </div>
           <div className="pay-btn-container">
-            <button type="button" className="pay-btn">
+            <button type="button" className="pay-btn" onClick={handleCheckout}>
               Pay Now
             </button>
           </div>

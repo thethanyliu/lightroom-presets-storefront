@@ -5,8 +5,9 @@ import { Product, ProductDesc, Info } from "../../components";
 import { useStateContext } from "@/context/StateContext";
 
 const ProductDetails = ({ product, products }) => {
-  const { productImage, images, name, price, relatedProducts, presetNumber } = product;
-  const { onAddToCart } = useStateContext()
+  const { productImage, images, name, price, relatedProducts, presetNumber } =
+    product;
+  const { onAddToCart } = useStateContext();
 
   return (
     <>
@@ -21,10 +22,7 @@ const ProductDetails = ({ product, products }) => {
           <div className="other-images-container">
             {images?.map((image, i) => {
               return (
-                <img
-                  src={urlFor(image)}
-                  className="other-image"
-                />
+                <img key={i} src={urlFor(image)} className="other-image" />
               );
             })}
           </div>
@@ -41,12 +39,20 @@ const ProductDetails = ({ product, products }) => {
           <div className="product-details-info">
             <Info />
           </div>
-          
+
           <div className="details-price">${price} CAD</div>
           <ProductDesc presetNumber={presetNumber} />
           <div className="product-detail-buttons">
-            <button type="botton" className="buy-now">Buy Now</button>
-            <button type="button" className="add-to-cart" onClick={() => onAddToCart(product)}>Add to Cart</button>
+            <button type="botton" className="buy-now">
+              Buy Now
+            </button>
+            <button
+              type="button"
+              className="add-to-cart"
+              onClick={() => onAddToCart(product)}
+            >
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
@@ -58,10 +64,9 @@ const ProductDetails = ({ product, products }) => {
         <div className="recommended-products">
           {products.map((product) => {
             if (relatedProducts.includes(product.name)) {
-                return <Product product={product} width={250} height={250} />
+              return <Product product={product} width={250} height={250} />;
             }
-          }
-          )}
+          })}
         </div>
       </div>
     </>
