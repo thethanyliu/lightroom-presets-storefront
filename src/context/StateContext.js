@@ -56,12 +56,25 @@ export const StateContext = ({ children }) => {
     setCartItems(updatedCart);
   };
 
+  const buyNow = (product) => {
+    const newCartItems = prev.map((item) => {
+      if (item.name === product.name) {
+        return {
+          ...item,
+          quantity: 1,
+        };
+      }
+    })
+    setCartItems(newCartItems)
+  }
+
   return (
     <Context.Provider
       value={{
         showCart,
         setShowCart,
         cartItems,
+        setCartItems,
         totalPrice,
         totalQty,
         onAddToCart,

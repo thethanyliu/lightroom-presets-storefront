@@ -15,20 +15,23 @@ const Cart = () => {
     const stripe = await getStripe();
 
     const res = await fetch("/api/stripe", {
-      method: "POST",
+      method: 'POST',
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(cartItems),
     });
 
-    if (res.statusCode === 500) return console.log("Error");
+    if (res.status === 500) {
+      console.log("Error");
+      return;
+    }
 
-    const data = await res.json()
+    const data = await res.json();
 
-    toast.loading("Redirecting...")
+    toast.loading("Redirecting...");
 
-    stripe.redirectToCheckout({ sessionId: data.id }) // an instance of a checkout
+    return stripe.redirectToCheckout({ sessionId: data.id }); // an instance of a checkout
   };
 
   return (

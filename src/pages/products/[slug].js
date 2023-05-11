@@ -1,13 +1,41 @@
-import React, { use } from "react";
+import React from "react";
 import { client, urlFor } from "../../lib/client";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { Product, ProductDesc, Info } from "../../components";
 import { useStateContext } from "@/context/StateContext";
+import getStripe from "@/lib/getStripe";
+import { toast } from "react-hot-toast";
 
 const ProductDetails = ({ product, products }) => {
   const { productImage, images, name, price, relatedProducts, presetNumber } =
     product;
-  const { onAddToCart } = useStateContext();
+  const { onAddToCart, cartItems, setCartItems } = useStateContext();
+
+  const handleBuyNow = async () => {
+    const stripe = await getStripe();
+    const newCartItems = [...cartItems, {...product, quantity: 1}]
+
+    setCartItems(newCartItems)
+
+    const res = await fetch("/api/stripe", {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(cartItems),
+    });
+
+    if (res.status === 500) {
+      console.log("Error");
+      return;
+    }
+
+    const data = await res.json();
+
+    toast.loading("Redirecting...");
+
+    return stripe.redirectToCheckout({ sessionId: data.id }); // an instance of a checkout
+  };
 
   return (
     <>
@@ -43,13 +71,13 @@ const ProductDetails = ({ product, products }) => {
           <div className="details-price">${price} CAD</div>
           <ProductDesc presetNumber={presetNumber} />
           <div className="product-detail-buttons">
-            <button type="botton" className="buy-now">
+            <button type="botton" className="buy-now" onClick={handleBuyNow}>
               Buy Now
             </button>
             <button
               type="button"
               className="add-to-cart"
-              onClick={() => onAddToCart(product)}
+              onClick={() => {onAddToCart(product)}}
             >
               Add to Cart
             </button>
