@@ -23,8 +23,7 @@ const Cart = () => {
     });
 
     if (res.status === 500) {
-      console.log("Error");
-      return;
+      return console.log("Error");
     }
 
     const data = await res.json();

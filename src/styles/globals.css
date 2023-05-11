@@ -288,10 +288,7 @@ li {
   margin-right: 15px;
   cursor: pointer;
   transform: scale(1, 1);
-  transition: transform 0.5s ease;
-}
-.buy-now:hover {
-  transform: scale(1.05, 1.05);
+  /* transition: transform 0.5s ease; */
 }
 
 .add-to-cart {
@@ -305,11 +302,6 @@ li {
   cursor: pointer;
   width: 200px;
   transform: scale(1, 1);
-  transition: transform 0.5s ease;
-}
-
-.add-to-cart:hover {
-  transform: scale(1.05, 1.05);
 }
 
 .hidden {
@@ -422,6 +414,7 @@ li {
 
 .continue-btn {
   padding: 10px 12px;
+  margin: 10px;
   border-radius: 8px;
   border: none;
   font-size: 15px;
@@ -429,6 +422,12 @@ li {
   background-color: #f02d34;
   color: #fff;
   cursor: pointer;
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+}
+
+.continue-btn:hover {
+  transform: scale(1.05, 1.05);
 }
 
 .remove-btn {
@@ -454,5 +453,42 @@ li {
 
 .tutorial p {
   font-size: 20px;
+}
 
+.success-wrapper {
+  background-color: white;
+  min-height: 60vh;
+}
+
+.success {
+  width: 1000px;
+  margin: auto;
+  margin-top: 160px;
+  background-color: #dcdcdc;
+  padding: 50px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.back-fill-icon {
+  color: green;
+  font-size: 40px;
+}
+
+.success h2 {
+  text-transform: capitalize;
+  margin-top: 15px 0px;
+  font-weight: 900;
+  font-size: 40px;
+  color: #000000;
+}
+
+.success .email-msg {
+  font-size: 20px;
+  padding-top: 5px;
+  font-weight: 600;
+  text-align: center;
 }

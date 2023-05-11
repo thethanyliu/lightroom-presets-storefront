@@ -51,7 +51,13 @@ export const StateContext = ({ children }) => {
   const removeFromCart = (product, index) => {
     const updatedCart = cartItems.filter((item, i) => i !== index);
     setTotalPrice((prev) => prev - product.quantity * product.price);
-    setTotalQty((prev) => prev - product.quantity);
+    setTotalQty((prev) => {
+      if (prev === 0) {
+        return 0;
+      }
+      return prev - product.quantity
+    })
+
 
     setCartItems(updatedCart);
   };
@@ -65,8 +71,10 @@ export const StateContext = ({ children }) => {
         setCartItems,
         totalPrice,
         totalQty,
+        setTotalPrice,
         onAddToCart,
         removeFromCart,
+        setTotalQty,
       }}
     >
       {children}

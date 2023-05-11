@@ -9,25 +9,27 @@ import { toast } from "react-hot-toast";
 const ProductDetails = ({ product, products }) => {
   const { productImage, images, name, price, relatedProducts, presetNumber } =
     product;
-  const { onAddToCart, cartItems, setCartItems } = useStateContext();
+  const { onAddToCart, cartItems, setTotalPrice, setTotalQty, setCartItems } =
+    useStateContext();
 
   const handleBuyNow = async () => {
     const stripe = await getStripe();
-    const newCartItems = [...cartItems, {...product, quantity: 1}]
+    const newCartItems = [...cartItems, { ...product, quantity: 1 }];
 
-    setCartItems(newCartItems)
+    setCartItems(newCartItems);
+    setTotalPrice((prev) => prev + price);
+    setTotalQty((prev) => prev + 1);
 
     const res = await fetch("/api/stripe", {
-      method: 'POST',
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(cartItems),
+      body: JSON.stringify(newCartItems),
     });
 
     if (res.status === 500) {
-      console.log("Error");
-      return;
+      return console.log("Error");
     }
 
     const data = await res.json();
@@ -77,7 +79,9 @@ const ProductDetails = ({ product, products }) => {
             <button
               type="button"
               className="add-to-cart"
-              onClick={() => {onAddToCart(product)}}
+              onClick={() => {
+                onAddToCart(product);
+              }}
             >
               Add to Cart
             </button>
