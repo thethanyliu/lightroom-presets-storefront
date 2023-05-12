@@ -4,10 +4,11 @@ import Link from "next/link";
 import { BsBagCheckFill } from "react-icons/bs";
 
 const success = () => {
-  const { cartItems, setTotalQty, setCartItems, setTotalPrice } =
+  const { setTotalQty, setCartItems, setTotalPrice } =
     useStateContext();
 
   useEffect(() => {
+    localStorage.clear()
     setCartItems([]);
     setTotalPrice(0);
     setTotalQty(0);
