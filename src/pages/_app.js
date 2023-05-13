@@ -3,7 +3,7 @@ import React from "react";
 import { Layout } from "@/components";
 import { StateContext } from "@/context/StateContext";
 import { Toaster } from "react-hot-toast";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App({ Component, pageProps }) {
   // the "Component" component refers to the current page
@@ -13,9 +13,9 @@ export default function App({ Component, pageProps }) {
         <Layout>
           <Toaster />
           <Component {...pageProps} />
-          <Analytics />
         </Layout>
       </StateContext>
+      <Analytics />
     </>
   );
 }
