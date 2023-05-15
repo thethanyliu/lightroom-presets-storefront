@@ -9,8 +9,9 @@ const Navbar = () => {
   const { showCart, totalQty, setShowCart } = useStateContext();
 
   return (
-    <div className="nb">
-      <div>
+    <div className="nb-wrapper">
+      <div className="nb-first-container">
+        <img src="/site_logo.png" alt="site logo" width="64px" height="64px" />
         <ul className="navbar-ul">
           <li>
             <Link style={linkStyle} href="/products">
@@ -29,7 +30,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div>
+      <div className="nb-second-container">
         <button
           type="button"
           className="cart"

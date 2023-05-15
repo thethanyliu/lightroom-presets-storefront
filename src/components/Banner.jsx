@@ -6,7 +6,7 @@ const Banner = () => {
     <div  
       className="bannerImage">
       <div className="bannerText">
-        Empowering Creativity
+        Empowering Creativity One Image at a Time
       </div>
       <div>
         <Link href="/products">
