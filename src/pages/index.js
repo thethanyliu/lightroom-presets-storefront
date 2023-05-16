@@ -1,23 +1,17 @@
 import React from "react";
 import {
   Banner,
-  FeaturedProduct,
   Info,
   Slider,
 } from "../components";
-import IOne from "../../public/Image_One.jpeg"
-import ITwo from "../../public/Image_Two.jpeg"
-import { client } from "../lib/client";
+import { client } from "@/lib/client";
 
 const Home = ({ products }) => {
   return (
     <div className="home">
-      <Banner />
-      <FeaturedProduct
-        featuredProducts={products.filter((product) => product.feature)}
-      />
+      <Banner products={products} />
       <Info />
-      <Slider beforeImage={IOne} afterImage={ITwo} />
+      <Slider  />
     </div>
   );
 };

@@ -1,18 +1,15 @@
 import React from "react";
-import Link from "next/link";
+import FeaturedProduct from "./FeaturedProduct";
 
-const Banner = () => {
+const Banner = ({ products }) => {
   return (
-    <div  
-      className="bannerImage">
+    <div className="bannerImage">
       <div className="bannerText">
         Empowering Creativity One Image at a Time
       </div>
-      <div>
-        <Link href="/products">
-          <button className="bannerButton" type="button">Shop Now</button>
-        </Link>
-      </div>
+      <FeaturedProduct
+        featuredProducts={products.filter((product) => product.feature)}
+      />
     </div>
   );
 };
