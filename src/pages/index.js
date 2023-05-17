@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Banner,
+  ImageSection,
   Info,
   Slider,
 } from "../components";
@@ -10,8 +11,9 @@ const Home = ({ products }) => {
   return (
     <div className="home">
       <Banner products={products} />
+      <ImageSection />
       <Info />
-      <Slider  />
+      {/* <Slider  /> */}
     </div>
   );
 };

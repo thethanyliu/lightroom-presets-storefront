@@ -11,7 +11,8 @@ const Navbar = () => {
   return (
     <div className="nb-wrapper">
       <div className="nb-first-container">
-        <img src="/site_logo.png" alt="site logo" width="64px" height="64px" />
+        <Link href="\"><img src="/site_logo.png" alt="site logo" width="64px" height="64px" /></Link>
+        
         <ul className="navbar-ul">
           <li>
             <Link style={linkStyle} href="/products">
