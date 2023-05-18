@@ -3,9 +3,9 @@ import React from 'react'
 const ImageSection = () => {
   return (
     <div className='image-section-container'>
-      <div>
+      <h1>
         Upgrading your photos, just got easier.
-      </div>
+      </h1>
       <div className='image-section-image'>
 
       </div>

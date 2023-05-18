@@ -13,7 +13,7 @@ const Home = ({ products }) => {
       <Banner products={products} />
       <ImageSection />
       <Info />
-      {/* <Slider  /> */}
+      <Slider  />
     </div>
   );
 };

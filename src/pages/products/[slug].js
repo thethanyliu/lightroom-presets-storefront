@@ -1,14 +1,24 @@
 import React from "react";
 import { client, urlFor } from "../../lib/client";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import { Product, ProductDesc, Info } from "../../components";
+import { Product, ProductDesc, Info, Slider } from "../../components";
 import { useStateContext } from "@/context/StateContext";
 import getStripe from "@/lib/getStripe";
 import { toast } from "react-hot-toast";
 
 const ProductDetails = ({ product, products }) => {
-  const { productImage, images, name, price, relatedProducts, presetNumber } =
-    product;
+  const {
+    productImage,
+    images,
+    name,
+    price,
+    relatedProducts,
+    presetNumber,
+    beforeAfterImages,
+  } = product;
+
+  beforeAfterImages.sort();
+  console.log(beforeAfterImages);
   const { onAddToCart, cartItems, setTotalPrice, setTotalQty, setCartItems } =
     useStateContext();
 
@@ -88,8 +98,28 @@ const ProductDetails = ({ product, products }) => {
           </div>
         </div>
       </div>
-      <div>
-        <h1>What's Diffing</h1>
+      <div className="slider-outer-section">
+        <h1 className="slider-text">What's Diffing</h1>
+        <div className="slider-inner-section">
+          <div className="slider-container">
+            <Slider
+              beforeImage={urlFor(beforeAfterImages && beforeAfterImages[5])}
+              afterImage={urlFor(beforeAfterImages && beforeAfterImages[0])}
+            />
+          </div>
+          <div className="slider-container">
+            <Slider
+              beforeImage={urlFor(beforeAfterImages && beforeAfterImages[1])}
+              afterImage={urlFor(beforeAfterImages && beforeAfterImages[2])}
+            />
+          </div>
+          <div className="slider-container">
+            <Slider
+              beforeImage={urlFor(beforeAfterImages && beforeAfterImages[3])}
+              afterImage={urlFor(beforeAfterImages && beforeAfterImages[4])}
+            />
+          </div>
+        </div>
       </div>
       <div className="recommended-products-container">
         <h2 className="rec-products">Recommended Products</h2>
