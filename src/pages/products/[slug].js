@@ -16,9 +16,7 @@ const ProductDetails = ({ product, products }) => {
     presetNumber,
     beforeAfterImages,
   } = product;
-
-  beforeAfterImages.sort();
-  console.log(beforeAfterImages);
+  
   const { onAddToCart, cartItems, setTotalPrice, setTotalQty, setCartItems } =
     useStateContext();
 
