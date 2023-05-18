@@ -501,7 +501,10 @@ li {
   text-align: center;
 }
 
-
+.slider {
+  align-items: center;
+  max-width: 300px;
+}
 
 .slider-outer-section {
   padding: 0px 10rem 0 10rem;
@@ -510,7 +513,7 @@ li {
 .slider-inner-section {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 15px;
+  margin: auto;
 }
 
 .slider-text {
@@ -521,6 +524,7 @@ li {
 .slider-container {
   justify-content: center;
   align-items: center;
+  margin: 10px;
 }
 
 .image-section-container {
