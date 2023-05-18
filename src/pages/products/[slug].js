@@ -16,7 +16,7 @@ const ProductDetails = ({ product, products }) => {
     presetNumber,
     beforeAfterImages,
   } = product;
-  
+
   const { onAddToCart, cartItems, setTotalPrice, setTotalQty, setCartItems } =
     useStateContext();
 
@@ -98,7 +98,7 @@ const ProductDetails = ({ product, products }) => {
       </div>
       <div className="slider-outer-section">
         <h1 className="slider-text">What's Diffing</h1>
-        <div className="slider-inner-section">
+        {/* <div className="slider-inner-section">
           <div className="slider-container">
             <Slider
               beforeImage={urlFor(beforeAfterImages && beforeAfterImages[5])}
@@ -117,7 +117,7 @@ const ProductDetails = ({ product, products }) => {
               afterImage={urlFor(beforeAfterImages && beforeAfterImages[4])}
             />
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="recommended-products-container">
         <h2 className="rec-products">Recommended Products</h2>
