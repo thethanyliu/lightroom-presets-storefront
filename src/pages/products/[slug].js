@@ -96,25 +96,29 @@ const ProductDetails = ({ product, products }) => {
           </div>
         </div>
       </div>
+      <div>
+        <div>section one</div>
+        <div>section two</div>
+      </div>
       <div className="slider-outer-section">
         <h1 className="slider-text">What's Diffing</h1>
         {/* <div className="slider-inner-section">
           <div className="slider-container">
             <Slider
-              beforeImage={urlFor(beforeAfterImages && beforeAfterImages[5])}
-              afterImage={urlFor(beforeAfterImages && beforeAfterImages[0])}
+              beforeImage={urlFor(beforeAfterImages && beforeAfterImages[0])}
+              afterImage={urlFor(beforeAfterImages && beforeAfterImages[1])}
             />
           </div>
           <div className="slider-container">
             <Slider
-              beforeImage={urlFor(beforeAfterImages && beforeAfterImages[1])}
-              afterImage={urlFor(beforeAfterImages && beforeAfterImages[2])}
+              beforeImage={urlFor(beforeAfterImages && beforeAfterImages[2])}
+              afterImage={urlFor(beforeAfterImages && beforeAfterImages[3])}
             />
           </div>
           <div className="slider-container">
             <Slider
-              beforeImage={urlFor(beforeAfterImages && beforeAfterImages[3])}
-              afterImage={urlFor(beforeAfterImages && beforeAfterImages[4])}
+              beforeImage={urlFor(beforeAfterImages && beforeAfterImages[4])}
+              afterImage={urlFor(beforeAfterImages && beforeAfterImages[5])}
             />
           </div>
         </div> */}
