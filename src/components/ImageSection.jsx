@@ -4,7 +4,7 @@ const ImageSection = () => {
   return (
     <div className='image-section-container'>
       <h1>
-        Upgrading your photos, just got easier.
+        Upgrading your photo game, just got easier.
       </h1>
       <div className='image-section-image'>
 
