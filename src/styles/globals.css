@@ -71,35 +71,6 @@ body,
   font-weight: 600;
 }
 
-.bannerImage {
-  background-color: white;
-  background-size: auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  text-align: center;
-  width: full;
-  padding-top: 8rem;
-  border-radius: 15px;
-  margin: 0 5px 0 5px;
-}
-
-.bannerText {
-  font-size: 2.25rem;
-  font-weight: 650;
-  padding-bottom: 0.5rem;
-  color: black;
-}
-
-.bannerButton {
-  border-width: 1px;
-  border-radius: 8px;
-  padding: 8px;
-  background-color: salmon;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
 .navbar-ul {
   display: flex;
   flex-wrap: wrap;

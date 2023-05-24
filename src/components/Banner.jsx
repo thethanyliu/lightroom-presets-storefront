@@ -1,10 +1,11 @@
 import React from "react";
 import FeaturedProduct from "./FeaturedProduct";
+import classes from "./Banner.module.css"
 
 const Banner = ({ products }) => {
   return (
-    <div className="bannerImage">
-      <div className="bannerText">
+    <div className={classes.bannerImage}>
+      <div className={classes.bannerText}>
         Empowering Creativity One Image at a Time
       </div>
       <FeaturedProduct
