@@ -1,13 +1,11 @@
-.bannerImage {
-    background-color: white;
-    background-size: auto;
-    background-position: center;
-    background-repeat: no-repeat;
+.bannerContainer {
     text-align: center;
     width: full;
     padding-top: 8rem;
     border-radius: 15px;
     margin: 0 5px 0 5px;
+    justify-content: center;
+    align-items: center;
   }
   
   .bannerText {

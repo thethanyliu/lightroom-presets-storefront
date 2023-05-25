@@ -4,7 +4,7 @@ import classes from "./Banner.module.css"
 
 const Banner = ({ products }) => {
   return (
-    <div className={classes.bannerImage}>
+    <div className={classes.bannerContainer}>
       <div className={classes.bannerText}>
         Empowering Creativity One Image at a Time
       </div>

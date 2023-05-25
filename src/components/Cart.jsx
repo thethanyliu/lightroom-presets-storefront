@@ -5,6 +5,7 @@ import { useStateContext } from "@/context/StateContext";
 import { urlFor } from "@/lib/client";
 import getStripe from "@/lib/getStripe";
 import { toast } from "react-hot-toast";
+import classes from "./Cart.module.css"
 
 const Cart = () => {
   const cartRef = useRef();
@@ -57,22 +58,22 @@ const Cart = () => {
           </Link>
         </div>
       ) : (
-        <div className="cart-items">
+        <div className={classes.cartItems}>
           {cartItems.map((item, index) => (
-            <div className="cart-product">
+            <div className={classes.cartProduct}>
               <img
                 src={urlFor(item?.productImage)}
                 width={100}
                 height={100}
-                className="cart-pics"
+                className={cartPics}
               />
-              <div className="cart-item-desc flex">
+              <div className={classes.cartItemDesc}>
                 <h4>{item.name}</h4>
                 <div>
                   <h5>{item.quantity}</h5>
                   <button
                     type="button"
-                    className="remove-btn"
+                    className={classes.removeBtn}
                     onClick={() => removeFromCart(item, index)}
                   >
                     Remove
@@ -85,12 +86,12 @@ const Cart = () => {
       )}
 
       {cartItems.length >= 1 && (
-        <div className="cart-bottom">
+        <div className={classes.cartBottom}>
           <div>
             <h3>Subtotal: ${totalPrice}</h3>
           </div>
-          <div className="pay-btn-container">
-            <button type="button" className="pay-btn" onClick={handleCheckout}>
+          <div className={classes.payBtnContainer}>
+            <button type="button" className={classes.payBtn} onClick={handleCheckout}>
               Pay Now
             </button>
           </div>

@@ -1,18 +1,19 @@
 .feature {
-    display: flex;
-    padding-bottom: 5rem;
-  }
+  display: flex;
+  padding-bottom: 5rem;
+  justify-content: center;
+}
 
+.featureProducts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding-top: 1rem;
+  gap: 15px;
+}
+
+@media (min-width: 1440) {
   .featureProducts {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    padding-top: 1rem;
-    gap: 10px;
+    padding-left: 15rem;
+    padding-right: 15rem;
   }
-  
-  @media (min-width: 976px) {
-    .featureProducts {
-      padding-left: 15rem;
-      padding-right: 15rem;
-    }
-  }
+}

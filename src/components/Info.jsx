@@ -5,25 +5,26 @@ import {
   AiOutlineDesktop,
   AiOutlineMobile,
 } from "react-icons/ai";
+import classes from "./Info.module.css"
 
 const Info = () => {
   return (
-    <div className="info">
-      <div className="info-div">
+    <div className={classes.info}>
+      <div className={classes.infoDiv}>
         <AiOutlineDownload />
-        <span className="info-span">Instant Download</span>
+        <span className={classes.infoSpan}>Instant Download</span>
       </div>
-      <div className="info-div">
+      <div className={classes.infoDiv}>
         <AiOutlineBook />
-        <span className="info-span">Tutorials Guide</span>
+        <span className={classes.infoSpan}>Tutorials Guide</span>
       </div>
-      <div className="info-div">
+      <div className={classes.infoDiv}>
         <AiOutlineDesktop />
-        <span className="info-span">Lightroom Desktop</span>
+        <span className={classes.infoSpan}>Lightroom Desktop</span>
       </div>
-      <div className="info-div">
+      <div className={classes.infoDiv}>
         <AiOutlineMobile />
-        <span className="info-span">Lightroom Mobile</span>
+        <span className={classes.infoSpan}>Lightroom Mobile</span>
       </div>
     </div>
   );

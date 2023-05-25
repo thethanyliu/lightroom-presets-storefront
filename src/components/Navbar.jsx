@@ -35,11 +35,11 @@ const Navbar = () => {
       <div className={classes.nbSecondContainer}>
         <button
           type="button"
-          className="cart"
+          className={classes.cart}
           onClick={() => setShowCart(true)}
         >
           <AiOutlineShopping />
-          <span className={totalQty == 0 ? "hidden" : "cart-qty"}>
+          <span className={totalQty == 0 ? "hidden" : classes.cartQty}>
             {totalQty}
           </span>
         </button>

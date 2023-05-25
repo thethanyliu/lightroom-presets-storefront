@@ -1,0 +1,62 @@
+.cartItems {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+  }
+
+  .cartPics {
+    border-radius: 8px;
+  }
+
+  .cartItemDesc {
+    display: flex;
+    align-items: start;
+    width: 350px;
+    color: #324d67;
+  }
+
+  .cartProduct {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+  }
+  
+  .cartBottom {
+    position: absolute;
+    bottom: 12px;
+    right: 5px;
+    width: 100%;
+    padding: 30px 50px;
+  }
+
+  .payBtnContainer {
+    width: 400px;
+    margin: auto;
+  }
+
+  .payBtn {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    margin-top: 40px;
+    text-transform: uppercase;
+    background-color: #f02d34;
+    color: #fff;
+    cursor: pointer;
+    transform: scale(1, 1);
+    transition: transform 0.5s ease;
+  }
+
+  .payBtn:hover {
+    transform: scale(1.05, 1.05);
+  }
+
+.removeBtn {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    text-decoration: underline;
+  }

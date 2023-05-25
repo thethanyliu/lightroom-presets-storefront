@@ -24,31 +24,6 @@ body,
   width: 100%;
 }
 
-.cart {
-  font-size: 25px;
-  color: black;
-  cursor: pointer;
-  transition: transform 0.4s ease;
-  border: none;
-  background-color: white;
-}
-
-.cart:hover {
-  transform: scale(1.05, 1.05);
-}
-
-.cart-qty {
-  position: absolute;
-  right: 8px;
-  font-size: 8px;
-  color: #eee;
-  background-color: #f02d34;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  text-align: center;
-  font-weight: 600;
-}
 
 .products {
   display: grid;
@@ -89,8 +64,15 @@ li {
 
 @media (min-width: 976px) {
   .product-details {
-    padding-left: 25rem /* 224px */;
-    padding-right: 25rem /* 224px */;
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .product-details {
+    padding-left: 16rem;
+    padding-right: 16rem;
   }
 }
 
@@ -150,24 +132,6 @@ li {
   padding: 10px 0 10px 0;
 }
 
-.info {
-  display: flex;
-  font-size: 40px;
-  gap: 20px;
-  justify-content: center;
-}
-
-.info-div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.info-span {
-  font-size: 20px;
-  text-align: center;
-}
-
 .product-detail-buttons {
   display: flex;
   padding: 5px 0 10px 0;
@@ -203,18 +167,6 @@ li {
 
 .hidden {
   display: none;
-}
-
-.cart-backdrop {
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  /* will-change: transform; */
-  transition: all 1s ease-in-out;
 }
 
 .cart-container {
@@ -254,61 +206,6 @@ li {
   font-size: 20px;
 }
 
-.cart-item-desc .flex {
-  display: flex;
-  align-items: start;
-  width: 350px;
-  color: #324d67;
-}
-
-.cart-pics {
-  border-radius: 8px;
-}
-
-.cart-items {
-  display: flex;
-  flex-direction: column;
-  margin-top: 15px;
-}
-
-.cart-product {
-  display: flex;
-  gap: 30px;
-  padding: 20px;
-}
-
-.cart-bottom {
-  position: absolute;
-  bottom: 12px;
-  right: 5px;
-  width: 100%;
-  padding: 30px 50px;
-}
-
-.pay-btn-container {
-  width: 400px;
-  margin: auto;
-}
-.pay-btn {
-  width: 100%;
-  max-width: 400px;
-  padding: 10px 12px;
-  border-radius: 10px;
-  border: none;
-  font-size: 20px;
-  margin-top: 40px;
-  text-transform: uppercase;
-  background-color: #f02d34;
-  color: #fff;
-  cursor: pointer;
-  transform: scale(1, 1);
-  transition: transform 0.5s ease;
-}
-
-.pay-btn:hover {
-  transform: scale(1.05, 1.05);
-}
-
 .continue-btn {
   padding: 10px 12px;
   margin: 10px;
@@ -325,13 +222,6 @@ li {
 
 .continue-btn:hover {
   transform: scale(1.05, 1.05);
-}
-
-.remove-btn {
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  text-decoration: underline;
 }
 
 .tutorial-container {
@@ -390,11 +280,6 @@ li {
   text-align: center;
 }
 
-.slider {
-  display: inline;
-  max-width: 300px;
-}
-
 .slider-outer-section {
   padding: 5rem 10rem 5rem 10rem;
 }
@@ -419,10 +304,4 @@ li {
   display: inline-block;
   box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-}
-
-.image-section-container {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  background: gray;
 }

@@ -1,8 +1,9 @@
 import React from 'react'
+import classes from "./ImageSection.module.css"
 
 const ImageSection = () => {
   return (
-    <div className='image-section-container'>
+    <div className={classes.imageSectionContainer}>
       <h1>
         Upgrading your photo game, just got easier.
       </h1>

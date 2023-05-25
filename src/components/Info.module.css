@@ -1,0 +1,17 @@
+.info {
+    display: flex;
+    font-size: 40px;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .infoDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .infoSpan {
+    font-size: 20px;
+    text-align: center;
+  }
