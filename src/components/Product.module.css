@@ -1,0 +1,31 @@
+.productCard {
+    cursor: pointer;
+    transform: scale(1, 1);
+    transition: transform 0.5s ease;
+    color: #324d67;
+  }
+  
+  .productImage {
+    border-radius: 15px;
+    transform: scale(1, 1);
+    transition: transform 0.5s ease;
+  }
+  
+  .productTitle {
+    margin-top: 8px;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  .productImage {
+    margin: 5px 0 10px 0;
+    font-weight: 800;
+    text-align: center;
+  }
+
+
+  .product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }

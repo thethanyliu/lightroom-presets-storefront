@@ -3,17 +3,18 @@ import Link from "next/link";
 import { AiOutlineShopping } from "react-icons/ai";
 import { useStateContext } from "@/context/StateContext";
 import { Cart, BackDrop } from "./";
+import classes from "./Navbar.module.css"
 
 const Navbar = () => {
   const linkStyle = { textDecoration: "none", color: "black", fontWeight: 700 };
   const { showCart, totalQty, setShowCart } = useStateContext();
 
   return (
-    <div className="nb-wrapper">
-      <div className="nb-first-container">
+    <div className={classes.nbWrapper}>
+      <div className={classes.nbFirstContainer}>
         <Link href="\"><img src="/site_logo.png" alt="site logo" width="64px" height="64px" /></Link>
         
-        <ul className="navbar-ul">
+        <ul className={classes.navbarUl}>
           <li>
             <Link style={linkStyle} href="/products">
               Products
@@ -31,7 +32,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="nb-second-container">
+      <div className={classes.nbSecondContainer}>
         <button
           type="button"
           className="cart"
