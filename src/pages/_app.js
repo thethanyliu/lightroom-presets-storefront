@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "@/styles/slug.css";
 import React from "react";
 import { Layout } from "@/components";
 import { StateContext } from "@/context/StateContext";

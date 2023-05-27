@@ -35,22 +35,22 @@ const Cart = () => {
   };
 
   return (
-    <div className="cart-container" ref={cartRef}>
+    <div className={classes.cartContainer} ref={cartRef}>
       <button
         type="button"
-        className="cart-heading"
+        className={classes.cartHeading}
         onClick={() => setShowCart(false)}
       >
         <AiOutlineLeft />
-        <span className="heading">Your Cart: {totalQty} items</span>
+        <span className={classes.heading}>Your Cart: {totalQty} items</span>
       </button>
       {cartItems.length < 1 ? (
-        <div className="empty-cart">
+        <div className={classes.emptyCart}>
           <AiOutlineShopping size={100} /> <h3>Your shopping bag is empty</h3>
           <Link href="/">
             <button
               type="button"
-              className="continue-btn"
+              className={classes.continueBtn}
               onClick={() => setShowCart(false)}
             >
               Continue Shopping
@@ -65,12 +65,11 @@ const Cart = () => {
                 src={urlFor(item?.productImage)}
                 width={100}
                 height={100}
-                className={cartPics}
+                className={classes.cartPics}
               />
               <div className={classes.cartItemDesc}>
-                <h4>{item.name}</h4>
+                <h4>{item.name} {item.quantity}</h4>
                 <div>
-                  <h5>{item.quantity}</h5>
                   <button
                     type="button"
                     className={classes.removeBtn}
