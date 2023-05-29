@@ -1,20 +1,50 @@
 .imageSectionContainer {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    background: rgb(243, 239, 239);
-    padding: 5rem 2rem 5rem 2rem;
-  }
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  background: rgb(243, 239, 239);
+  padding: 5rem 2rem 5rem 2rem;
+  justify-content: center;
 
-  @media (min-width: 1440px) {
-    .imageSectionContainer {
-      padding-left: 20rem;
-      padding-right: 20rem;
-    }
-  }
+}
 
-  .sliderContainer {
-    border-radius: 5px;
-    max-width: 400px;
-    text-align: center;
+@media (min-width: 1440px) {
+  .imageSectionContainer {
+    padding-left: 20rem;
+    padding-right: 20rem;
   }
-  
+}
+
+.sliderContainer {
+  text-align: center;
+  padding-left: 25%;
+}
+
+.sliderInnerContainer {
+  max-width: 450px;
+  border-radius: 5px;
+}
+
+.imageSectionImage {
+  display: flex;
+  flex-direction: column;
+}
+
+.firstInnerImage {
+  background-image: url("../../public/image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 15rem 0 15rem 0;
+  border-radius: 8px;
+  color: white;
+  max-width: 550px;
+
+}
+
+.shopButton {
+  margin-top: 8px;
+  background: white;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: none;
+}
