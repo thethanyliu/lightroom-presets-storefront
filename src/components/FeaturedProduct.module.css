@@ -10,10 +10,3 @@
   padding-top: 1rem;
   gap: 15px;
 }
-
-@media (min-width: 1440) {
-  .featureProducts {
-    padding-left: 15rem;
-    padding-right: 15rem;
-  }
-}
