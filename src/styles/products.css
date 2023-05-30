@@ -1,0 +1,5 @@
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: 5rem 20rem 5rem 20rem;
+  }

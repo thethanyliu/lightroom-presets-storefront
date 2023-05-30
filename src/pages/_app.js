@@ -1,5 +1,8 @@
 import "@/styles/globals.css";
 import "@/styles/slug.css";
+import "@/styles/tutorial.css";
+import "@/styles/success.css";
+import "@/styles/products.css";
 import React from "react";
 import { Layout } from "@/components";
 import { StateContext } from "@/context/StateContext";

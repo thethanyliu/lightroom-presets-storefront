@@ -3,7 +3,7 @@ import {
   Banner,
   ImageSection,
   Info,
-  Slider,
+  StatsSection
 } from "../components";
 import { client } from "@/lib/client";
 
@@ -13,7 +13,7 @@ const Home = ({ products }) => {
       <Banner products={products} />
       <ImageSection />
       <Info />
-      <Slider  />
+      <StatsSection />
     </div>
   );
 };

@@ -1,0 +1,17 @@
+.tutorial-container {
+    display: flex;
+    background-color: rgb(240, 231, 231);
+  }
+  
+  .tutorial {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    z-index: 10;
+    margin: 8rem 5rem 8rem 5rem;
+    padding: 5rem 6rem 5rem 6rem;
+  }
+  
+  .tutorial p {
+    font-size: 20px;
+  }
