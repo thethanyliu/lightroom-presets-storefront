@@ -1,14 +1,28 @@
 .container {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: 5rem 5rem 5rem 5rem;
+  background: rgb(243, 239, 239);
 }
+
+
+.imageContainer {
+  margin: auto;
+}
+
+.textContainer {
+  padding: 0 5px 0 5px;
+  margin: auto;
+}
+
 
 .title {
     text-align: center;
-    padding-bottom: 8px;
+    padding-bottom: 12px;
+    font-size: 40px;
 }
 
 .text {
     text-align: center;
-    font-size: larger;
+    font-size: large;
 }
