@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { client, urlFor } from "../../lib/client";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import { Product, ProductDesc, Info, Slider } from "../../components";
+import {
+  Product,
+  ProductDesc,
+  Info,
+  Slider,
+  StatsSection,
+} from "../../components";
 import { useStateContext } from "@/context/StateContext";
 import getStripe from "@/lib/getStripe";
 import { toast } from "react-hot-toast";
 
 const ProductDetails = ({ product, products }) => {
+  const [imageIndex, setImageIndex] = useState(0);
+
   const {
     productImage,
     images,
@@ -20,6 +28,7 @@ const ProductDetails = ({ product, products }) => {
   const { onAddToCart, cartItems, setTotalPrice, setTotalQty, setCartItems } =
     useStateContext();
 
+  const copyWrite = `The ${name} includes files for both Lightroom mobile (DNG files) and Lightroom desktop (XMP files). All of which you get to keep forever!`;
   const handleBuyNow = async () => {
     const stripe = await getStripe();
     const newCartItems = [...cartItems, { ...product, quantity: 1 }];
@@ -52,19 +61,38 @@ const ProductDetails = ({ product, products }) => {
       <div className="product-details">
         <div className="image-container">
           <img
-            src={urlFor(productImage && productImage)}
-            className="product-details-image"
+            src={
+              imageIndex === 0
+                ? urlFor(productImage)
+                : urlFor(images[imageIndex - 1])
+            }
+            className={
+              imageIndex === 0 ? "product-details-image" : "other-images-large"
+            }
             width={450}
             height={450}
           />
           <div className="other-images-container">
+            <img
+              src={urlFor(productImage)}
+              className="other-product-image"
+              width={450}
+              height={450}
+              onClick={() => setImageIndex(0)}
+            />
             {images?.map((image, i) => {
               return (
-                <img key={i} src={urlFor(image)} className="other-image" />
+                <img
+                  key={i}
+                  src={urlFor(image)}
+                  className="other-images"
+                  onClick={() => setImageIndex(i + 1)}
+                />
               );
             })}
           </div>
         </div>
+
         <div>
           <h1 className="product-details-title">{name}</h1>
           <div>
@@ -77,7 +105,6 @@ const ProductDetails = ({ product, products }) => {
           <div className="product-details-info">
             <Info />
           </div>
-
           <div className="details-price">${price} CAD</div>
           <ProductDesc presetNumber={presetNumber} />
           <div className="product-detail-buttons">
@@ -95,10 +122,6 @@ const ProductDetails = ({ product, products }) => {
             </button>
           </div>
         </div>
-      </div>
-      <div>
-        <div>section one</div>
-        <div>section two</div>
       </div>
       <div className="slider-outer-section">
         <h1 className="slider-text">What's Diffing</h1>
@@ -122,6 +145,9 @@ const ProductDetails = ({ product, products }) => {
             />
           </div>
         </div> */}
+      </div>
+      <div>
+        <StatsSection text={copyWrite} />
       </div>
       <div className="recommended-products-container">
         <h2 className="rec-products">Recommended Products</h2>
