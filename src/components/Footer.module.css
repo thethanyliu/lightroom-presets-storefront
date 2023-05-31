@@ -1,7 +1,7 @@
 .footer {
     color: #000000;
     text-align: center;
-    margin-top: 20px;
+    padding-top: 20px;
     padding: 30px 10px;
     font-weight: 700;
     display: flex;
@@ -9,4 +9,5 @@
     align-items: center;
     gap: 10px;
     justify-content: center;
+    background-color: rgb(240, 245, 245);
   }

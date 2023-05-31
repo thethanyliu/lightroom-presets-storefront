@@ -5,6 +5,7 @@ import {
   Product,
   ProductDesc,
   Info,
+  PresetStatsSection,
   Slider,
   StatsSection,
 } from "../../components";
@@ -123,6 +124,7 @@ const ProductDetails = ({ product, products }) => {
           </div>
         </div>
       </div>
+      <PresetStatsSection presetNumber={presetNumber}/>
       <div className="slider-outer-section">
         <h1 className="slider-text">What's Diffing</h1>
         {/* <div className="slider-inner-section">
@@ -146,15 +148,13 @@ const ProductDetails = ({ product, products }) => {
           </div>
         </div> */}
       </div>
-      <div>
-        <StatsSection text={copyWrite} />
-      </div>
+      <StatsSection text={copyWrite} />
       <div className="recommended-products-container">
         <h2 className="rec-products">Recommended Products</h2>
         <div className="recommended-products">
           {products.map((product) => {
             if (relatedProducts.includes(product.name)) {
-              return <Product product={product} width={250} height={250} />;
+              return <Product product={product} width={300} height={300} />;
             }
           })}
         </div>
