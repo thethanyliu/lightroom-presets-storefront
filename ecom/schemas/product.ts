@@ -6,7 +6,7 @@ export default {
     {
       name: 'productImage',
       title: 'Product Image',
-      type: 'image'
+      type: 'image',
     },
     {
       name: 'images',
@@ -18,12 +18,18 @@ export default {
       },
     },
     {
-      name: "beforeAfterImages",
-      title: "Before and After Images",
-      type: "array",
+      name: 'beforeAfterImages',
+      title: 'Before and After Images',
+      type: 'array',
       of: [
-        {type: "image"}
+        {type: 'image'}
       ],
+    },
+    {
+      name: 'galleryImages',
+      title: 'Gallery Images',
+      type: 'array',
+      of: [{type: 'image'}],
     },
     {
       name: 'name',
@@ -73,7 +79,7 @@ export default {
       name: 'relatedProducts',
       title: 'Related Products',
       type: 'array',
-      of: [{ type: 'string' }],
+      of: [{type: 'string'}],
     },
     {
       name: 'discount',

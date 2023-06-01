@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./StatsSection.module.css";
 import Image from "next/image";
 
-const StatsSection = ({ text }) => {
+const StatsSection = ({ text, showIncludes }) => {
   return (
     <div className={classes.container}>
       <div className={classes.imageContainer}>
@@ -14,12 +14,9 @@ const StatsSection = ({ text }) => {
         ></Image>
       </div>
       <div className={classes.textContainer}>
-        <h1 className={classes.title}>
-          Mobile + Desktop Presets
-        </h1>
-        <p className={classes.text}>
-          {text}
-        </p>
+        <h3 className={showIncludes ? classes.secondTitle : classes.hidden}>Includes</h3>
+        <h1 className={classes.title}>Mobile + Desktop Presets</h1>
+        <p className={classes.text}>{text}</p>
       </div>
     </div>
   );

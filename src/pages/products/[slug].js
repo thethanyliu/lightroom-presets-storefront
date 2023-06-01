@@ -148,7 +148,7 @@ const ProductDetails = ({ product, products }) => {
           </div>
         </div> */}
       </div>
-      <StatsSection text={copyWrite} />
+      <StatsSection text={copyWrite} showIncludes={true} />
       <div className="recommended-products-container">
         <h2 className="rec-products">Recommended Products</h2>
         <div className="recommended-products">

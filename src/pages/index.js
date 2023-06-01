@@ -11,7 +11,7 @@ const Home = ({ products }) => {
       <Banner products={products} />
       <ImageSection />
       <Info />
-      <StatsSection text={copyWrite} />
+      <StatsSection text={copyWrite} showIncludes={false} />
     </div>
   );
 };
