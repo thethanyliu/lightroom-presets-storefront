@@ -1,11 +1,17 @@
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
+const stripe = new Stripe(process.env.NEXT_PUBLIC_TEST_STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
       // Create Checkout Sessions from body params.
+      let slug = "";
+      req.body.forEach(element => {
+        slug += element._id + "_"
+        return
+      });
+
       const params = {
         submit_type: "pay",
         mode: "payment",
@@ -36,7 +42,7 @@ export default async function handler(req, res) {
             quantity: item.quantity,
           };
         }),
-        success_url: `${req.headers.origin}/success`,
+        success_url: `${req.headers.origin}/success/${slug}`,
         cancel_url: `${req.headers.origin}/`,
       };
 

@@ -24,6 +24,8 @@ const ProductDetails = ({ product, products }) => {
     relatedProducts,
     presetNumber,
     beforeAfterImages,
+    dng_zip,
+    zip_file,
   } = product;
 
   const { onAddToCart, cartItems, setTotalPrice, setTotalQty, setCartItems } =
@@ -56,6 +58,8 @@ const ProductDetails = ({ product, products }) => {
 
     return stripe.redirectToCheckout({ sessionId: data.id }); // an instance of a checkout
   };
+
+  console.log(products)
 
   return (
     <>
@@ -157,6 +161,10 @@ const ProductDetails = ({ product, products }) => {
               return <Product product={product} width={300} height={300} />;
             }
           })}
+        </div>
+        <div>
+          <a href={getUrlFromId(dng_zip.asset._ref)}>DNG (Desktop) Files</a>
+          <a href={getUrlFromId(zip_file.asset._ref)}>XMP (Mobile) Files</a>
         </div>
       </div>
     </>
