@@ -1,5 +1,10 @@
 import React from "react";
-import { Banner, ImageSection, Info, StatsSection } from "../components";
+import {
+  Banner,
+  ImageSection,
+  Info,
+  StatsSection,
+} from "../components";
 import { client } from "@/lib/client";
 
 const Home = ({ products }) => {
