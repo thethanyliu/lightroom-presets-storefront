@@ -24,12 +24,11 @@ const successSlug = ({ products }) => {
     ids.includes(product._id)
   );
   console.log(purchasedItems);
-  
+
   const getUrlFromId = (ref) => {
     const [_file, id, extension] = ref.split("-");
     return `https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_PROJECT_ID}/${process.env.NEXT_PUBLIC_DATASET}/${id}.${extension}`;
   };
-
 
   return (
     <div className="success-wrapper">
@@ -44,6 +43,19 @@ const successSlug = ({ products }) => {
             Continue Shopping
           </button>
         </Link>
+        <div>
+          {purchasedItems.map((item) => (
+            <div>
+              {item.name}: <br />
+              <a href={getUrlFromId(item.dng_zip.asset._ref)}>
+                DNG (LR Desktop) Files
+              </a> <br />
+              <a href={getUrlFromId(item.zip_file.asset._ref)}>
+                DNG (LR Mobile) Files
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
