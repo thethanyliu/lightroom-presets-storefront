@@ -23,9 +23,8 @@ const ProductDetails = ({ product, products }) => {
     price,
     relatedProducts,
     presetNumber,
+    galleryImages,
     beforeAfterImages,
-    dng_zip,
-    zip_file,
   } = product;
 
   const { onAddToCart, cartItems, setTotalPrice, setTotalQty, setCartItems } =
@@ -128,7 +127,7 @@ const ProductDetails = ({ product, products }) => {
           </div>
         </div>
       </div>
-      <PresetStatsSection presetNumber={presetNumber}/>
+      {/* <PresetStatsSection presetNumber={presetNumber} images={galleryImages}/> */}
       <div className="slider-outer-section">
         <h1 className="slider-text">What's Diffing</h1>
         {/* <div className="slider-inner-section">
@@ -161,10 +160,6 @@ const ProductDetails = ({ product, products }) => {
               return <Product product={product} width={300} height={300} />;
             }
           })}
-        </div>
-        <div>
-          <a href={getUrlFromId(dng_zip.asset._ref)}>DNG (Desktop) Files</a>
-          <a href={getUrlFromId(zip_file.asset._ref)}>XMP (Mobile) Files</a>
         </div>
       </div>
     </>

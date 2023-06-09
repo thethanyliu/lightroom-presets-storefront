@@ -7,3 +7,12 @@
   .textContainer {
     margin: auto;
   }
+
+  .imageContainer {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .imageWithPadding {
+    padding-top: 10px;
+  }
