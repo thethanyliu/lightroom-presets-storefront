@@ -5,7 +5,6 @@ import {
   Product,
   ProductDesc,
   Info,
-  PresetStatsSection,
   Slider,
   StatsSection,
 } from "../../components";
@@ -23,7 +22,6 @@ const ProductDetails = ({ product, products }) => {
     price,
     relatedProducts,
     presetNumber,
-    galleryImages,
     beforeAfterImages,
   } = product;
 
@@ -58,7 +56,7 @@ const ProductDetails = ({ product, products }) => {
     return stripe.redirectToCheckout({ sessionId: data.id }); // an instance of a checkout
   };
 
-  console.log(products)
+  console.log(products);
 
   return (
     <>
@@ -73,15 +71,15 @@ const ProductDetails = ({ product, products }) => {
             className={
               imageIndex === 0 ? "product-details-image" : "other-images-large"
             }
-            width={450}
-            height={450}
+            width={window.innerWidth > 768 ? 450 : 300}
+            height={window.innerWidth > 768 ? 450 : 300}
           />
           <div className="other-images-container">
             <img
               src={urlFor(productImage)}
               className="other-product-image"
-              width={450}
-              height={450}
+              width={window.innerWidth > 768 ? 450 : 300}
+              height={window.innerWidth > 768 ? 450 : 300}
               onClick={() => setImageIndex(0)}
             />
             {images?.map((image, i) => {
@@ -97,7 +95,7 @@ const ProductDetails = ({ product, products }) => {
           </div>
         </div>
 
-        <div>
+        <div className="product-details-container">
           <h1 className="product-details-title">{name}</h1>
           <div>
             <AiFillStar />
@@ -105,9 +103,6 @@ const ProductDetails = ({ product, products }) => {
             <AiFillStar />
             <AiFillStar />
             <AiOutlineStar />
-          </div>
-          <div className="product-details-info">
-            <Info />
           </div>
           <div className="details-price">${price} CAD</div>
           <ProductDesc presetNumber={presetNumber} />
@@ -127,7 +122,9 @@ const ProductDetails = ({ product, products }) => {
           </div>
         </div>
       </div>
-      {/* <PresetStatsSection presetNumber={presetNumber} images={galleryImages}/> */}
+      <div className="product-details-info">
+        <Info />
+      </div>
       <div className="slider-outer-section">
         <h1 className="slider-text">What's Diffing</h1>
         {/* <div className="slider-inner-section">

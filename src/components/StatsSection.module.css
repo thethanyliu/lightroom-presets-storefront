@@ -1,12 +1,12 @@
 .container {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  padding: 5rem 5rem 5rem 5rem;
+  display: flex;
+  flex-direction: column;
   background: rgb(243, 239, 239);
+  padding: 4rem 0 6rem 0;
 }
 
 .imageContainer {
-  margin: auto;
+  margin: 0 2.5rem 0 2.5rem;
 }
 
 .textContainer {
@@ -18,17 +18,44 @@
   font-size: 16px;
   color: rgb(90, 82, 82);
   padding-bottom: 5px;
+  text-align: center;
 }
 
 .title {
   padding-bottom: 12px;
-  font-size: 40px;
+  font-size: 35px;
+  text-align: center;
 }
 
 .text {
   color: rgb(90, 82, 82);
-  padding-right: 10rem;
+  padding: 0 3rem 0 3rem;
   font-size: medium;
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 5rem 5rem 5rem 5rem;
+  }
+
+  .text {
+    padding-right: 10rem;
+  }
+
+  .imageContainer {
+    margin: auto;
+  }
+
+  .title {
+    font-size: 40px;
+    text-align: left;
+  }
+
+  .secondTitle {
+    text-align: left;
+  }
 }
 
 .hidden {

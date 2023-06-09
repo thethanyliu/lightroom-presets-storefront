@@ -10,7 +10,6 @@ const ImageSection = () => {
         <div className={classes.sliderInnerContainer}>
           <Slider beforeImage={"./b.jpg"} afterImage={"./a.jpg"} />
         </div>
-        
         <p>Vintage Tones Preset Bundle - Neon Glow</p>
       </div>
       <div className={classes.imageSectionImage}>
@@ -18,7 +17,11 @@ const ImageSection = () => {
           <h2>Lightroom Presets</h2>
           <button type="button" className={classes.shopButton}>
             <Link
-              style={{ textDecoration: "none", color: "black", fontWeight: 600 }}
+              style={{
+                textDecoration: "none",
+                color: "black",
+                fontWeight: 600,
+              }}
               href="/products"
             >
               Shop Now

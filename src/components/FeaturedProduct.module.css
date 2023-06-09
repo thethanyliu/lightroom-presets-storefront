@@ -5,8 +5,15 @@
 }
 
 .featureProducts {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  flex-direction: column;
   padding-top: 1rem;
   gap: 15px;
+}
+
+@media (min-width: 768px) {
+  .feature {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }

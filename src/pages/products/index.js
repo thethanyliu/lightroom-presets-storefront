@@ -14,7 +14,7 @@ const product = ({ products }) => {
     <>
       <div className="products">
         {uniqProducts?.map((product) => {
-          return <Product product={product} width={350} height={350} />;
+          return <Product product={product} width={window.innerWidth > 768 ? 350: 150} height={window.innerWidth > 768 ? 350: 150} />;
         })}
       </div>
     </>

@@ -1,27 +1,31 @@
 .bannerContainer {
-    text-align: center;
-    width: full;
-    padding-top: 8rem;
+  text-align: center;
+  width: full;
+  padding-top: 8rem;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 976px) {
+  .bannerContainer {
     border-radius: 15px;
     margin: 0 5px 0 5px;
-    justify-content: center;
-    align-items: center;
   }
-  
-  .bannerText {
-    font-size: 2.25rem;
-    font-weight: 650;
-    padding-bottom: 0.5rem;
-    color: black;
-  }
+}
 
-  .bannerButton {
-    border-width: 1px;
-    border-radius: 8px;
-    padding: 8px;
-    background-color: salmon;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: 500;
-  }
-  
+.bannerText {
+  font-size: 2.25rem;
+  font-weight: 650;
+  padding-bottom: 0.5rem;
+  color: black;
+}
+/* 
+.bannerButton {
+  border-width: 1px;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: salmon;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+} */
