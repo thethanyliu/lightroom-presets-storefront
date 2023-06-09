@@ -71,15 +71,11 @@ const ProductDetails = ({ product, products }) => {
             className={
               imageIndex === 0 ? "product-details-image" : "other-images-large"
             }
-            width={window.innerWidth > 768 ? 450 : 300}
-            height={window.innerWidth > 768 ? 450 : 300}
           />
           <div className="other-images-container">
             <img
               src={urlFor(productImage)}
               className="other-product-image"
-              width={window.innerWidth > 768 ? 450 : 300}
-              height={window.innerWidth > 768 ? 450 : 300}
               onClick={() => setImageIndex(0)}
             />
             {images?.map((image, i) => {

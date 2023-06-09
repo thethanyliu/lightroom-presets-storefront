@@ -37,15 +37,11 @@
   .container {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    padding: 5rem 5rem 5rem 5rem;
+    padding: 5rem 0 5rem 0;
   }
 
   .text {
-    padding-right: 10rem;
-  }
-
-  .imageContainer {
-    margin: auto;
+    padding: 0;
   }
 
   .title {
@@ -55,6 +51,24 @@
 
   .secondTitle {
     text-align: left;
+  }
+}
+
+@media (min-width: 976px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 5rem 5rem 5rem 5rem;
+  }
+
+  .imageContainer {
+    margin: auto;
+  }
+}
+
+@media (min-width: 1440px) {
+  .text {
+    padding-right: 10rem;
   }
 }
 
