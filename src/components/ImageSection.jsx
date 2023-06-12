@@ -10,7 +10,6 @@ const ImageSection = () => {
         <div className={classes.sliderInnerContainer}>
           <Slider beforeImage={"./b.jpg"} afterImage={"./a.jpg"} />
         </div>
-        <p>Vintage Tones Preset Bundle - Neon Glow</p>
       </div>
       <div className={classes.imageSectionImage}>
         <div className={classes.firstInnerImage}>
@@ -28,7 +27,7 @@ const ImageSection = () => {
             </Link>
           </button>
         </div>
-        <div>another image</div>
+        <div className={classes.secondInnerImage}></div>
       </div>
     </div>
   );

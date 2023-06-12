@@ -9,12 +9,12 @@
   .products {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    padding: 5rem 15rem 3rem 15rem;
+    padding: 8rem 5rem 3rem 5rem;
   }
 }
 
 @media (min-width: 1440px) {
   .products {
-    padding: 5rem 20rem 3rem 20rem;
+    padding: 8rem 20rem 3rem 20rem;
   }
 }

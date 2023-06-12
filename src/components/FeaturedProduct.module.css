@@ -1,5 +1,6 @@
 .feature {
   display: flex;
+  flex-direction: column;
   padding-bottom: 5rem;
   justify-content: center;
 }
@@ -12,8 +13,14 @@
 }
 
 @media (min-width: 768px) {
-  .feature {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  .featureProducts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1440px) {
+  .featureProducts {
+    padding: 0 15rem 0 15rem;
   }
 }
