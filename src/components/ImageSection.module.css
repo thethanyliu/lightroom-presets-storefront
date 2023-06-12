@@ -30,19 +30,12 @@
   border-radius: 8px;
   color: white;
   max-width: 500px;
-  max-height: 500px;
+  max-height: 495px;
+  overflow: hidden;
 }
 
 .secondInnerImage {
-  background-image: url("../../public/beforeafter.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 10%;
-  margin-top: 10px;
-  max-width: 500px;
-  max-height: 490px;
-  border-radius: 8px;
-  padding: 3rem 0 3rem 0;
+  display: none;
 }
 
 .shopButton {
@@ -53,7 +46,45 @@
   border: none;
 }
 
+.hidden {
+  display: none;
+}
+
 @media (min-width: 768px) {
+  .sliderContainer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .imageSectionContainer {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+
+  .firstInnerImage {
+    padding: 15rem 0 15rem 0;
+  }
+}
+
+@media (min-width: 976px) {
+  .imageSectionContainer {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .secondInnerImage {
+    display: flex;
+    background-image: url("../../public/beforeafter.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 10%;
+    margin-top: 10px;
+    max-width: 500px;
+    max-height: 490px;
+    border-radius: 8px;
+    padding: 3rem 0 3rem 0;
+  }
+
   .imageSectionContainer {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));

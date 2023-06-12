@@ -27,7 +27,7 @@ const ImageSection = () => {
             </Link>
           </button>
         </div>
-        <div className={classes.secondInnerImage}></div>
+        <div className={classes.secondInnerImage} />
       </div>
     </div>
   );
