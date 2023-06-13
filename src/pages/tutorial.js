@@ -2,8 +2,8 @@ import React from "react";
 
 const tutorial = () => {
   return (
-    <div className="tutorial-container">
-      <div className="tutorial">
+    <div className="misc-container">
+      <div className="misc-inner-container">
         <h1>For Mobile </h1>
         <br />
         <h2>IOS</h2>

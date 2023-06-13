@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import "@/styles/slug.css";
-import "@/styles/tutorial.css";
+import "@/styles/misc.css";
 import "@/styles/success.css";
 import "@/styles/products.css";
 import React from "react";
