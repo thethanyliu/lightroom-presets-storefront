@@ -2,7 +2,42 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   height: 200px;
-  padding: 0 2rem 0 2rem;
+  padding: 1rem 20rem 0 20rem;
+  background: rgb(248, 246, 246);
+}
+
+.support {
+  font-size: medium;
+  padding: 8px 0 8px 0;
+}
+
+.socialContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.supportLinkContainer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+
+.presetLinkContainer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+
+.supportLink {
+  padding-bottom: 5px;
+}
+
+.footerLogo {
+  padding-bottom: 2.5rem;
+}
+
+.footerSocial {
+  padding-left: 1.5rem;
 }
 
 .footer {
@@ -16,5 +51,5 @@
     align-items: center;
     gap: 10px;
     justify-content: center;
-    background-color: rgb(240, 245, 245);
+    background: rgb(248, 246, 246);
   }

@@ -23,14 +23,13 @@ const Layout = ({ children }) => {
         <LoadingPage />
       ) : (
         <>
-          {" "}
           <header>
             <Navbar />
           </header>
           <main className="main-container">{children}</main>
           <footer>
             <Footer />
-          </footer>{" "}
+          </footer>
         </>
       )}
     </>
