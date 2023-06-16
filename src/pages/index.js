@@ -4,6 +4,7 @@ import {
   ImageSection,
   Info,
   StatsSection,
+  BeforeAndAfter
 } from "../components";
 import { client } from "@/lib/client";
 
@@ -16,6 +17,7 @@ const Home = ({ products }) => {
       <Banner products={products} />
       <ImageSection />
       <Info />
+      <BeforeAndAfter fromSchema={false} beforeAfterImages={["./a.jpg", "./b.jpg"]} titleText={"See the Difference"}/>
       <StatsSection text={copyWrite} showIncludes={false} />
     </div>
   );

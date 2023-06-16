@@ -121,29 +121,6 @@ const ProductDetails = ({ product, products }) => {
       <div className="product-details-info">
         <Info />
       </div>
-      <div className="slider-outer-section">
-        <h1 className="slider-text">What's Diffing</h1>
-        {/* <div className="slider-inner-section">
-          <div className="slider-container">
-            <Slider
-              beforeImage={urlFor(beforeAfterImages && beforeAfterImages[0])}
-              afterImage={urlFor(beforeAfterImages && beforeAfterImages[1])}
-            />
-          </div>
-          <div className="slider-container">
-            <Slider
-              beforeImage={urlFor(beforeAfterImages && beforeAfterImages[2])}
-              afterImage={urlFor(beforeAfterImages && beforeAfterImages[3])}
-            />
-          </div>
-          <div className="slider-container">
-            <Slider
-              beforeImage={urlFor(beforeAfterImages && beforeAfterImages[4])}
-              afterImage={urlFor(beforeAfterImages && beforeAfterImages[5])}
-            />
-          </div>
-        </div> */}
-      </div>
       <StatsSection text={copyWrite} showIncludes={true} />
       <div className="recommended-products-container">
         <h2 className="rec-products">Recommended Products</h2>

@@ -3,6 +3,7 @@ import "@/styles/slug.css";
 import "@/styles/misc.css";
 import "@/styles/success.css";
 import "@/styles/products.css";
+import "@/styles/contact.css";
 import React from "react";
 import { Layout } from "@/components";
 import { StateContext } from "@/context/StateContext";

@@ -1,29 +1,3 @@
-.slider-outer-section {
-  padding: 5rem 10rem 5rem 10rem;
-}
-
-.slider-inner-section {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin: auto;
-  gap: 8rem;
-  padding: 8px;
-}
-
-.slider-text {
-  padding-bottom: 12px;
-  text-align: center;
-  color: rgb(28 25 23);
-}
-
-.slider-container {
-  justify-content: center;
-  align-items: center;
-  display: inline-block;
-  box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-}
-
 .other-images-container {
   display: flex;
   padding: 10px 8px 0 8px;
