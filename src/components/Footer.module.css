@@ -61,6 +61,7 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     height: 180px;
+    padding: 1rem 8rem 0 8rem;
   }
 
   .footerLogo {
@@ -68,7 +69,7 @@
   }
 }
 
-@media (min-width: 976px) {
+@media (min-width: 1440px) {
   .container {
     padding: 1rem 20rem 0 20rem;
   }
