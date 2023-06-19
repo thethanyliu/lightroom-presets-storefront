@@ -16,10 +16,6 @@ const Footer = () => {
               height="100px"
             />
           </div>
-          <div className={classes.footerSocial}>
-              
-            <a style={{textDecoration: "none", color: "black",}} href="https://www.instagram.com/pnutpresets/"><SiInstagram /></a>
-          </div>
         </div>
         <div className={classes.supportLinkContainer}>
           <h4 className={classes.support}>Popular</h4>
@@ -97,6 +93,21 @@ const Footer = () => {
             >
               Contact
             </Link>
+          </div>
+        </div>
+        <div className={classes.socialLinkContainer}>
+          <h4 className={classes.support}>Social</h4>
+          <div className={classes.supportLink}>
+            <a
+              style={{
+                textDecoration: "none",
+                color: "grey",
+                fontWeight: 500,
+              }}
+              href="https://www.instagram.com/pnutpresets/"
+            >
+              Instagram
+            </a>
           </div>
         </div>
       </div>

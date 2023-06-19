@@ -5,7 +5,7 @@ import {
   Product,
   ProductDesc,
   Info,
-  Slider,
+  BeforeAndAfter,
   StatsSection,
 } from "../../components";
 import { useStateContext } from "@/context/StateContext";
@@ -121,6 +121,7 @@ const ProductDetails = ({ product, products }) => {
       <div className="product-details-info">
         <Info />
       </div>
+      {/* <BeforeAndAfter fromSchema={true} beforeAfterImages={beforeAfterImages} titleText={"What's Diffing"} /> */}
       <StatsSection text={copyWrite} showIncludes={true} />
       <div className="recommended-products-container">
         <h2 className="rec-products">Recommended Products</h2>

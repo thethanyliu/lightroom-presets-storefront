@@ -17,7 +17,7 @@ const Home = ({ products }) => {
       <Banner products={products} />
       <ImageSection />
       <Info />
-      <BeforeAndAfter fromSchema={false} beforeAfterImages={["./a.jpg", "./b.jpg"]} titleText={"See the Difference"}/>
+      <BeforeAndAfter fromSchema={false} beforeAfterImages={["./0.jpg", "./1.jpg", "./2.jpg", "./3.jpg", "./4.jpg", "./5.jpg"]} titleText={"See the Difference"}/>
       <StatsSection text={copyWrite} showIncludes={false} />
     </div>
   );

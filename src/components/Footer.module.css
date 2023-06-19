@@ -1,9 +1,9 @@
 .container {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  height: 200px;
-  padding: 1rem 20rem 0 20rem;
+  display: flex;
+  flex-direction: column;
+  width: screen;
   background: rgb(248, 246, 246);
+  padding: 0 5rem 0 2rem;
 }
 
 .support {
@@ -19,13 +19,19 @@
 .supportLinkContainer {
   display: flex;
   flex-direction: column;
-  padding-top: 1rem;
+  padding-top: 2rem;
 }
 
 .presetLinkContainer {
   display: flex;
   flex-direction: column;
-  padding-top: 1rem;
+  padding-top: 2rem;
+}
+
+.socialLinkContainer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
 }
 
 .supportLink {
@@ -33,23 +39,37 @@
 }
 
 .footerLogo {
-  padding-bottom: 2.5rem;
-}
-
-.footerSocial {
-  padding-left: 1.5rem;
+  padding-top: 1rem;
 }
 
 .footer {
-    color: #000000;
-    text-align: center;
-    padding-top: 20px;
-    padding: 30px 10px;
-    font-weight: 700;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    justify-content: center;
-    background: rgb(248, 246, 246);
+  color: #000000;
+  text-align: center;
+  padding-top: 20px;
+  padding: 30px 10px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  background: rgb(248, 246, 246);
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    height: 180px;
   }
+
+  .footerLogo {
+    padding: 1rem 0 2.5rem 0;
+  }
+}
+
+@media (min-width: 976px) {
+  .container {
+    padding: 1rem 20rem 0 20rem;
+  }
+}

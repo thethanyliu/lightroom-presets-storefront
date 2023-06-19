@@ -14,18 +14,18 @@ const BeforeAndAfter = ({ fromSchema, beforeAfterImages, titleText }) => {
               afterImage={fromSchema ? urlFor(beforeAfterImages && beforeAfterImages[1]) : beforeAfterImages[1]}
             />
           </div>
-          {/* <div className={classes.sliderContainer}>
+          <div className={classes.sliderContainer}>
             <Slider
-              beforeImage={urlFor(beforeAfterImages && beforeAfterImages[2])}
-              afterImage={urlFor(beforeAfterImages && beforeAfterImages[3])}
+              beforeImage={fromSchema ? urlFor(beforeAfterImages && beforeAfterImages[2]) : beforeAfterImages[2]}
+              afterImage={fromSchema ? urlFor(beforeAfterImages && beforeAfterImages[3]) : beforeAfterImages[3]}
             />
           </div>
           <div className={classes.sliderContainer}>
             <Slider
-              beforeImage={urlFor(beforeAfterImages && beforeAfterImages[4])}
-              afterImage={urlFor(beforeAfterImages && beforeAfterImages[5])}
+              beforeImage={fromSchema ? urlFor(beforeAfterImages && beforeAfterImages[4]) : beforeAfterImages[4]}
+              afterImage={fromSchema ? urlFor(beforeAfterImages && beforeAfterImages[5]) : beforeAfterImages[5]}
             />
-          </div> */}
+          </div>
         </div>
       </div>
   )
