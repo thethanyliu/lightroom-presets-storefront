@@ -1,17 +1,10 @@
 import React from "react";
 import classes from "./ImageSection.module.css";
-import { Slider } from ".";
 import Link from "next/link";
 
 const ImageSection = () => {
   return (
-    <div className={classes.imageSectionContainer}>
-      <div className={classes.sliderContainer}>
-        <div className={classes.sliderInnerContainer}>
-          <Slider beforeImage={"./b.jpg"} afterImage={"./a.jpg"} />
-        </div>
-      </div>
-      <div className={classes.imageSectionImage}>
+      <div className={classes.imageSectionContainer}>
         <div className={classes.firstInnerImage}>
           <h2>Lightroom Presets</h2>
           <button type="button" className={classes.shopButton}>
@@ -29,7 +22,6 @@ const ImageSection = () => {
         </div>
         <div className={classes.secondInnerImage} />
       </div>
-    </div>
   );
 };
 
