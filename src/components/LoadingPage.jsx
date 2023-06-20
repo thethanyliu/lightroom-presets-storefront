@@ -1,11 +1,11 @@
 import React from 'react'
-import HashLoader from "react-spinners/HashLoader";
+import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 import classes from "./LoadingPage.module.css"
 
 const LoadingPage = () => {
   return (
     <div className={classes.loadingPage}>
-        <HashLoader color={"#d8a28c"} size={50}/>
+        <ClimbingBoxLoader color={"#555555"} />
     </div>
   )
 }

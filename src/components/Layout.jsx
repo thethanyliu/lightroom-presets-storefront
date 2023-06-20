@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1200);
+    }, 2000);
   }, []);
 
   return (
