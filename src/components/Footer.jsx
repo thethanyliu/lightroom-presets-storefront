@@ -1,7 +1,6 @@
 import React from "react";
 import classes from "./Footer.module.css";
 import Link from "next/link";
-import { SiInstagram } from "react-icons/si";
 
 const Footer = () => {
   return (
