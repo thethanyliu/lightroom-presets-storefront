@@ -46,7 +46,17 @@
     font-weight: 600;
   }
   
+  .linkItem {
+    padding-left: 15px;
+  }
+
   .hidden {
     display: none;
+  }
+
+  @media (min-width: 768px) {
+    .linkItem {
+      padding-left: 30px;
+    }
   }
   
