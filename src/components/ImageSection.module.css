@@ -15,8 +15,8 @@
   padding: 8rem 0 8rem 0;
   border-radius: 8px;
   color: white;
-  width: 500px;
-  height: 495px;
+  width: 350px;
+  height: 340px;
   overflow: hidden;
 }
 
@@ -25,10 +25,10 @@
   background-image: url("../../public/beforeafter.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 10%;
+  background-position: center;
   margin-top: 10px;
-  width: 500px;
-  max-height: 490px;
+  width: 350px;
+  max-height: 290px;
   border-radius: 8px;
   padding: 3rem 0 3rem 0;
 }
@@ -44,5 +44,13 @@
 @media (min-width: 768px) {
   .firstInnerImage {
     padding: 15rem 0 15rem 0;
+    width: 500px;
+    height: 490px;
+  }
+
+  .secondInnerImage {
+    width: 500px;
+    max-height: 490px;
+    background-position: 10%;
   }
 }
