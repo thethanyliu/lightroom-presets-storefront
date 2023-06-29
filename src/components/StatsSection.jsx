@@ -10,12 +10,14 @@ const StatsSection = ({ text, showIncludes }) => {
           src="/mobile_desktop.png"
           alt="desktop and mobile image"
           width={window.innerWidth > 768 ? 500 : 300}
-          height={window.innerWidth> 768 ? 350 : 200}
+          height={window.innerWidth > 768 ? 350 : 200}
           priority={true}
-        ></Image>
+        />
       </div>
       <div className={classes.textContainer}>
-        <h3 className={showIncludes ? classes.secondTitle : classes.hidden}>Includes</h3>
+        <h3 className={showIncludes ? classes.secondTitle : classes.hidden}>
+          Includes
+        </h3>
         <h1 className={classes.title}>Mobile + Desktop Presets</h1>
         <p className={classes.text}>{text}</p>
       </div>
