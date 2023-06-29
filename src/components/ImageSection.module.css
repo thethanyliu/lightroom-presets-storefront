@@ -8,7 +8,7 @@
 }
 
 .firstInnerImage {
-  background-image: url("../../public/image.png");
+  background-image: url("../../public/island_image.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -22,7 +22,7 @@
 
 .secondInnerImage {
   display: flex;
-  background-image: url("../../public/beforeafter.png");
+  background-image: url("../../public/beforeafter.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 10%;
