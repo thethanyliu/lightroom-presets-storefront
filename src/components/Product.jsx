@@ -1,8 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { urlFor } from "../lib/client";
-import classes from "./Product.module.css";
+import classes from "./Product.module.css"
 
 const Product = ({ product, width, height }) => {
   return (
@@ -12,17 +11,11 @@ const Product = ({ product, width, height }) => {
         href={`/products/${product.slug.current}`}
       >
         <div className={classes.product}>
-          <Image
+          <img
             src={urlFor(product.productImage)}
             width={width}
             height={height}
-            style={{
-              marginTop: "5px",
-              marginBottom: "10px",
-              textAlign: "center",
-              fontWeight: "800",
-            }}
-            priority={true}
+            className={classes.productImage}
             alt="cover image"
           />
           <div className={classes.productTitle}>{product.name}</div>
