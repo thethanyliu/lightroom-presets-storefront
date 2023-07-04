@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <>
+    <footer>
       <div className={classes.container}>
         <div className={classes.socialContainer}>
           <div className={classes.footerLogo}>
@@ -114,7 +114,7 @@ const Footer = () => {
       <div className={classes.footer}>
         <p>&copy; 2023 Pnutpresets All Rights Reserved</p>
       </div>
-    </>
+    </footer>
   );
 };
 
