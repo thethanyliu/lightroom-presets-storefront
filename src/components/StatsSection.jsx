@@ -1,6 +1,6 @@
 import React from "react";
-import classes from "./StatsSection.module.css";
 import Image from "next/image";
+import classes from "./StatsSection.module.css";
 
 const StatsSection = ({ text, showIncludes }) => {
   return (
@@ -11,7 +11,7 @@ const StatsSection = ({ text, showIncludes }) => {
           alt="desktop and mobile image"
           width={window.innerWidth > 768 ? 500 : 300}
           height={window.innerWidth > 768 ? 350 : 200}
-          style={{justifyContent: "center"}}
+          style={{ justifyContent: "center" }}
           priority={true}
         />
       </div>

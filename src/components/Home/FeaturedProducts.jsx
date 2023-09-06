@@ -1,11 +1,11 @@
 import React from "react";
 import FeaturedProduct from "./FeaturedProduct";
-import classes from "./Banner.module.css"
+import classes from "./FeaturedProducts.module.css"
 
-const Banner = ({ products }) => {
+const FeaturedProducts = ({ products }) => {
   return (
-    <div className={classes.bannerContainer}>
-      <div className={classes.bannerText}>
+    <div className={classes.featuredProductsContainer}>
+      <div className={classes.featuredProductsText}>
         Empowering Creativity One Image at a Time
       </div>
       <FeaturedProduct
@@ -15,4 +15,4 @@ const Banner = ({ products }) => {
   );
 };
 
-export default Banner;
+export default FeaturedProducts;

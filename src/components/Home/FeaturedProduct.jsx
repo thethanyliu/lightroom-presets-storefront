@@ -1,5 +1,5 @@
 import React from "react";
-import Product from "./Product";
+import Product from "../Products/Product";
 import classes from "./FeaturedProduct.module.css"
 
 const FeaturedProduct = ({ featuredProducts }) => {

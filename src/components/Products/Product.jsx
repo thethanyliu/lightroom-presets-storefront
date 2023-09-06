@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import { urlFor } from "../lib/client";
-import classes from "./Product.module.css"
+import Image from "next/image";
+import { urlFor } from "../../lib/client";
+import classes from "./Product.module.css";
 
 const Product = ({ product, width, height }) => {
   return (
@@ -11,8 +12,8 @@ const Product = ({ product, width, height }) => {
         href={`/products/${product.slug.current}`}
       >
         <div className={classes.product}>
-          <img
-            src={urlFor(product.productImage)}
+          <Image
+            src={urlFor(product.productImage).url()}
             width={width}
             height={height}
             className={classes.productImage}

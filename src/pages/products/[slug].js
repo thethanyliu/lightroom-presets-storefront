@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 import { client, urlFor } from "../../lib/client";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import {
@@ -22,7 +23,6 @@ const ProductDetails = ({ product, products }) => {
     price,
     relatedProducts,
     presetNumber,
-    beforeAfterImages,
   } = product;
 
   const { onAddToCart, cartItems, setTotalPrice, setTotalQty, setCartItems } =
@@ -80,11 +80,13 @@ const ProductDetails = ({ product, products }) => {
             />
             {images?.map((image, i) => {
               return (
-                <img
+                <Image
                   key={i}
-                  src={urlFor(image)}
+                  src={urlFor(image).url()}
                   className="other-images"
                   onClick={() => setImageIndex(i + 1)}
+                  width={90}
+                  height={45}
                 />
               );
             })}
@@ -154,7 +156,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params: { slug } }) => {
-  const query = `*[_type == "product" && slug.current == "${slug}"][0]`; // get all products
+  const query = `*[_type == "product" && slug.current == "${slug}"][0]`; // get product equal to current slug
   const product = await client.fetch(query);
 
   const productsQuery = '*[_type == "product"]';
