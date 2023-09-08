@@ -1,6 +1,6 @@
 import React from "react";
-import classes from "./ImageSection.module.css";
 import Link from "next/link";
+import classes from "./ImageSection.module.css";
 
 const ImageSection = () => {
   return (

@@ -1,7 +1,7 @@
 .feature {
   display: flex;
   flex-direction: column;
-  padding-bottom: 5rem;
+  padding-bottom: 3rem;
   justify-content: center;
 }
 

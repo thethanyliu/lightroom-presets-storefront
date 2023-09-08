@@ -1,6 +1,7 @@
 import React from "react";
 import {
   FeaturedProducts,
+  Hero,
   ImageSection,
   Info,
   StatsSection,
@@ -13,6 +14,7 @@ const Home = ({ products }) => {
 
   return (
     <div className="home">
+      <Hero />
       <FeaturedProducts products={products} />
       <ImageSection />
       {/* <BeforeAndAfter fromSchema={false} beforeAfterImages={["./0.jpg", "./1.jpg", "./2.jpg", "./3.jpg", "./4.jpg", "./5.jpg"]} titleText={"See the Difference"}/> */}
