@@ -7,12 +7,10 @@ const StatsSection = ({ text, showIncludes }) => {
     <div className={classes.container}>
       <div className={classes.imageContainer}>
         <Image
-          src="/mobile_desktop.png"
+          src="/assets/mobile_desktop.png"
           alt="desktop and mobile image"
           width={window.innerWidth > 768 ? 500 : 300}
           height={window.innerWidth > 768 ? 350 : 200}
-          style={{ justifyContent: "center" }}
-          priority={true}
         />
       </div>
       <div className={classes.textContainer}>

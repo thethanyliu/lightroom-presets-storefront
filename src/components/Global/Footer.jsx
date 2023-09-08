@@ -1,6 +1,7 @@
 import React from "react";
-import classes from "./Footer.module.css";
 import Link from "next/link";
+import Image from "next/image";
+import classes from "./Footer.module.css";
 
 const Footer = () => {
   return (
@@ -8,11 +9,11 @@ const Footer = () => {
       <div className={classes.container}>
         <div className={classes.socialContainer}>
           <div className={classes.footerLogo}>
-            <img
-              src="/site_logo.png"
+            <Image
+              src="/assets/Logos/site-logo-dark.png"
               alt="site logo"
-              width="100px"
-              height="100px"
+              width={100}
+              height={100}
             />
           </div>
         </div>

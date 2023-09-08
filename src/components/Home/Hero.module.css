@@ -73,17 +73,11 @@
   align-items: center;
 }
 
-.titleTMContainer {
-  display: flex;
-  align-items: center;
-}
-
 .title {
   display: flex;
-  text-transform: lowercase;
   color: white;
-  font-size: 6rem;
-  font-weight: 400;
+  font-size: 3rem;
+  font-weight: 600;
   letter-spacing: 0.2px;
   margin-bottom: -10px;
 }

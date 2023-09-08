@@ -1,18 +1,31 @@
 .navbarUl {
   display: flex;
   flex-wrap: wrap;
+  z-index: 1;
 }
 
 .nbWrapper {
   display: flex;
   position: fixed;
-  background: white;
-  z-index: 20;
-  justify-content: space-between;
-  height: 4rem;
-  width: 100vw;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
   background: transparent;
+  z-index: 200;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  width: 100vw;
+  padding: 0 0.8rem;
+}
+
+.nbWrapperSecond {
+  display: flex;
+  position: fixed;
+  background: rgb(241 245 249);
+  z-index: 200;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  width: 100vw;
+  padding: 0 0.8rem;
 }
 
 .nbFirstContainer {
@@ -20,18 +33,22 @@
   align-items: center;
 }
 
-.nbSecondContainer {
-  padding-top: 18px;
+.cartContainer {
   padding-right: 12px;
 }
 
-.cart {
+.shopLight {
+  position: relative;
   font-size: 25px;
-  color: black;
+  color: rgb(241 245 249);
   cursor: pointer;
-  border: none;
-  background-color: transparent;
-  /* transition: transform 0.4s ease; */
+}
+
+.shopDark {
+  position: relative;
+  font-size: 25px;
+  color: rgb(41 37 36);
+  cursor: pointer;
 }
 
 .cartQty {
