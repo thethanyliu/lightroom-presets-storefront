@@ -24,7 +24,13 @@ const Hero = () => {
           <h2 className={styles.title}>Empowering Creativity</h2>
           <span className={styles.subtitle}>Custom Lightroom Presets</span>
           <div className={styles.buttonContainer}>
-            <Button auto radius="lg" color="secondary" css={{ zIndex: "$1" }} onPress={() => router.push("/products")}>
+            <Button
+              auto
+              radius="lg"
+              color="secondary"
+              css={{ zIndex: "$1" }}
+              onPress={() => router.push("/products")}
+            >
               <span
                 style={{
                   color: "rgb(241 245 249)",

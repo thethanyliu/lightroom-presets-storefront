@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { useStateContext } from "@/context/StateContext";
@@ -15,12 +15,16 @@ import {
   linkStyleMobile,
 } from "./NbStyles";
 
-const Navbar = ({ bgOn = 50, initiallyTransparent = true }) => {
+const Navbar = ({
+  bgOn = 50,
+  initiallyTransparent = true,
+  darkMode = false,
+}) => {
   const [menuBar, setMenuBar] = useState(false);
 
   const { showCart, totalQty, setShowCart } = useStateContext();
 
-  const router = useRouter();
+  const pathname = usePathname();
 
   const navLinks = [
     {
@@ -90,24 +94,28 @@ const Navbar = ({ bgOn = 50, initiallyTransparent = true }) => {
             />
           )}
         </Link>
-
+      </div>
+      <div className={styles.linksContainer}>
         <ul className={styles.navbarUl}>
-          {navLinks.map((link, i) => (
-            <li key={i} className={styles.linkItem}>
-              <Link
-                key={link.name}
-                style={
-                  !menuBar
-                    ? router.pathname === link.link
-                      ? linkStyleDesktopLightUnderline
-                      : linkStyleDesktopLight
-                    : router.pathname === link.link
-                    ? linkStyleDesktopDarkUnderline
-                    : linkStyleDesktopDark
-                }
-                href={link.on ? link.link : "#"}
-              >
-                {link.name}
+          {navLinks?.map((navLink, i) => (
+            <li
+              key={i}
+              className={styles.linkItem}
+              style={
+                !menuBar
+                  ? pathname === navLink.link
+                    ? linkStyleDesktopLightUnderline
+                    : linkStyleDesktopLight
+                  : pathname === navLink.link
+                  ? linkStyleDesktopDarkUnderline
+                  : linkStyleDesktopDark
+              }
+            >
+              <Link key={navLink.name} href={navLink.on ? navLink.link : "#"}>
+                <span>
+
+                {navLink.name}
+                </span>
               </Link>
             </li>
           ))}

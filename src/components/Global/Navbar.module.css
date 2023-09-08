@@ -1,6 +1,7 @@
 .navbarUl {
   display: flex;
   flex-wrap: wrap;
+  gap: 20px;
   z-index: 1;
 }
 
@@ -30,7 +31,6 @@
 
 .nbFirstContainer {
   display: flex;
-  align-items: center;
 }
 
 .cartContainer {
@@ -65,7 +65,12 @@
 }
 
 .linkItem {
-  padding-left: 15px;
+  padding-left: 18px;
+  border-bottom: #eee;
+}
+
+.linksContainer {
+  display: none;
 }
 
 .hidden {
@@ -75,5 +80,14 @@
 @media (min-width: 768px) {
   .linkItem {
     padding-left: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .linksContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3px;
   }
 }

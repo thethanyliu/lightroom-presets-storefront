@@ -4,6 +4,7 @@ import {
   Hero,
   ImageSection,
   Info,
+  Navbar,
   StatsSection,
 } from "../components";
 import { client } from "@/lib/client";
@@ -14,10 +15,10 @@ const Home = ({ products }) => {
 
   return (
     <div className="home">
+      <Navbar />
       <Hero />
       <FeaturedProducts products={products} />
       <ImageSection />
-      {/* <BeforeAndAfter fromSchema={false} beforeAfterImages={["./0.jpg", "./1.jpg", "./2.jpg", "./3.jpg", "./4.jpg", "./5.jpg"]} titleText={"See the Difference"}/> */}
       <StatsSection text={copyWrite} showIncludes={false} />
       <Info />
     </div>
