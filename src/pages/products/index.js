@@ -1,6 +1,6 @@
 import React from "react";
 import { client } from "../../lib/client";
-import { Product } from "@/components";
+import { Footer, Navbar, Product } from "@/components";
 
 const product = ({ products }) => {
   const uniqProducts = [];
@@ -12,11 +12,13 @@ const product = ({ products }) => {
 
   return (
     <>
+      <Navbar bg={10} darkMode={true} />
       <div className="products">
-        {uniqProducts?.map((product) => {
-          return <Product product={product} width={window.innerWidth >= 768 ? 350: 150} height={window.innerWidth >= 768 ? 350: 150} />;
+        {uniqProducts?.map((product, i) => {
+          return <Product key={i} product={product} width={350} height={350} />;
         })}
       </div>
+      <Footer />
     </>
   );
 };

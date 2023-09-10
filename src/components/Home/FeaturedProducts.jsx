@@ -6,7 +6,7 @@ const FeaturedProducts = ({ products }) => {
   return (
     <div className={classes.featuredProductsContainer}>
       <div className={classes.featuredProductsText}>
-        Empowering Creativity One Image at a Time
+        Featured Bundles
       </div>
       <FeaturedProduct
         featuredProducts={products.filter((product) => product.feature)}

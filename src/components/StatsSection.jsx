@@ -9,8 +9,8 @@ const StatsSection = ({ text, showIncludes }) => {
         <Image
           src="/assets/mobile_desktop.png"
           alt="desktop and mobile image"
-          width={window.innerWidth > 768 ? 500 : 300}
-          height={window.innerWidth > 768 ? 350 : 200}
+          width={500}
+          height={350}
         />
       </div>
       <div className={classes.textContainer}>

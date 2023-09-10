@@ -1,6 +1,7 @@
 import React from "react";
 import {
   FeaturedProducts,
+  Footer,
   Hero,
   ImageSection,
   Info,
@@ -21,6 +22,7 @@ const Home = ({ products }) => {
       <ImageSection />
       <StatsSection text={copyWrite} showIncludes={false} />
       <Info />
+      <Footer />
     </div>
   );
 };

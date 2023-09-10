@@ -23,6 +23,7 @@ const Navbar = ({
   const [menuBar, setMenuBar] = useState(false);
 
   const { showCart, totalQty, setShowCart } = useStateContext();
+  console.log(totalQty);
 
   const pathname = usePathname();
 
@@ -78,7 +79,7 @@ const Navbar = ({
     >
       <div className={styles.nbFirstContainer}>
         <Link href="\">
-          {!menuBar ? (
+          {!menuBar && !darkMode ? (
             <Image
               src="/assets/Logos/site-logo-light.png"
               alt="site logo"
@@ -102,7 +103,7 @@ const Navbar = ({
               key={i}
               className={styles.linkItem}
               style={
-                !menuBar
+                !menuBar && !darkMode
                   ? pathname === navLink.link
                     ? linkStyleDesktopLightUnderline
                     : linkStyleDesktopLight
@@ -112,10 +113,7 @@ const Navbar = ({
               }
             >
               <Link key={navLink.name} href={navLink.on ? navLink.link : "#"}>
-                <span>
-
-                {navLink.name}
-                </span>
+                <span>{navLink.name}</span>
               </Link>
             </li>
           ))}
@@ -123,14 +121,12 @@ const Navbar = ({
       </div>
       <div className={styles.cartContainer}>
         <div
-          className={!menuBar ? styles.shopLight : styles.shopDark}
+          className={!menuBar && !darkMode ? styles.shopLight : styles.shopDark}
           onClick={() => setShowCart(true)}
         >
           <AiOutlineShopping />
-          <span className={totalQty == 0 ? styles.hidden : styles.cartQty}>
-            {totalQty}
-          </span>
         </div>
+        {totalQty !== 0 && <span className={styles.cartQty}>{totalQty}</span>}
       </div>
       {showCart && <BackDrop />}
       {showCart && <Cart />}

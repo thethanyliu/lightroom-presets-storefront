@@ -1,0 +1,39 @@
+.productDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px 0 15px;
+}
+
+.productDetailsTitle {
+  padding-bottom: 5px;
+  font-weight: 700;
+}
+
+.detailsPrice {
+  font-size: larger;
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+
+.productDetailButtons {
+  display: flex;
+  padding: 1rem 0 5px 0;
+  gap: 0.5rem;
+}
+
+.starsRatingContainer {
+  display: flex;
+  padding: 5px 0;
+}
+
+@media (min-width: 768px) {
+  .productDetailsContainer {
+    padding: 0 3rem 0 3rem;
+  }
+}
+
+@media (min-width: 976px) {
+  .productDetailsContainer {
+    padding: 0;
+  }
+}

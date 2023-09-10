@@ -34,12 +34,15 @@
 }
 
 .cartContainer {
-  padding-right: 12px;
+  display: flex;
+  position: relative;
+  padding-right: 10px;
+  cursor: pointer;
 }
 
 .shopLight {
   position: relative;
-  font-size: 25px;
+  font-size: 28px;
   color: rgb(241 245 249);
   cursor: pointer;
 }
@@ -54,6 +57,7 @@
 .cartQty {
   position: absolute;
   right: 8px;
+  top: 1px;
   font-size: 8px;
   color: #eee;
   background-color: #f02d34;

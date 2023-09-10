@@ -1,7 +1,7 @@
 .featuredProductsContainer {
   text-align: center;
   width: full;
-  padding-top: 3rem;
+  padding: 3rem 3px 0 3px;
   justify-content: center;
   align-items: center;
 }
