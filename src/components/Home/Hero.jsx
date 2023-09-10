@@ -1,6 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { Button } from "@nextui-org/react";
+import { AiOutlineArrowRight } from "react-icons/ai";
 import bgImage from "../../../public/assets/hero-banner-home.jpg";
 import styles from "./Hero.module.css";
 
@@ -26,16 +27,17 @@ const Hero = () => {
           <div className={styles.buttonContainer}>
             <Button
               auto
-              radius="lg"
-              color="secondary"
-              css={{ zIndex: "$1" }}
+              radius="full"
+              endContent={<AiOutlineArrowRight size={20} />}
+              className="bg-white z-10"
               onPress={() => router.push("/products")}
             >
               <span
                 style={{
-                  color: "rgb(241 245 249)",
+                  color: "rgb(30 41 59)",
                   textTransform: "uppercase",
                   letterSpacing: "0.8px",
+                  fontWeight: "bold",
                 }}
               >
                 Shop Now

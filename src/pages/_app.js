@@ -15,8 +15,10 @@ export default function App({ Component, pageProps }) {
     <>
       <NextUIProvider>
         <StateContext>
+          <Layout>
             <Toaster />
             <Component {...pageProps} />
+          </Layout>
         </StateContext>
       </NextUIProvider>
 
