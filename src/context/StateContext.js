@@ -18,7 +18,6 @@ export const StateContext = ({ children }) => {
     if (subtotal !== null) setTotalPrice(JSON.parse(subtotal));
     if (totalQuantity !== null) setTotalQty(JSON.parse(totalQuantity));
   }, []);
-  
 
   useEffect(() => {
     window.localStorage.setItem("CART_ITEM", JSON.stringify(cartItems));
@@ -48,18 +47,34 @@ export const StateContext = ({ children }) => {
     toast.success(`1 ${product.name} added to cart!`);
   };
 
-  const removeFromCart = (product, index) => {
-    const updatedCart = cartItems.filter((item, i) => i !== index);
-    setTotalPrice((prev) => prev - product.quantity * product.price);
+  const removeFromCart = (product) => {
+    const exist = cartItems.find((item) => item.name === product.name);
+    if (exist.quantity === 1) {
+      setCartItems(cartItems.filter((item) => item.name !== product.name));
+    } else {
+      setCartItems(
+        cartItems.map((item) =>
+          item.name === product.name
+            ? { ...exist, quantity: exist.quantity - 1 }
+            : item
+        )
+      );
+    }
     setTotalQty((prev) => {
-      if (prev === 0) {
+      if (prev == 0) {
         return 0;
       }
-      return prev - product.quantity
-    })
+      return prev - 1;
+    });
 
+    setTotalPrice((prev) => {
+      const rounded = (prev - product.price).toFixed(2);
+      if (rounded < 0) {
+        return 0;
+      }
+      return parseFloat(rounded);
+    });
 
-    setCartItems(updatedCart);
   };
 
   return (

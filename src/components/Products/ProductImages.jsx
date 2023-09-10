@@ -3,9 +3,8 @@ import Image from "next/image";
 import { client, urlFor } from "../../lib/client";
 import styles from "./ProductImages.module.css";
 
-
 const ProductImages = ({ productImage, images }) => {
-    const [imageIndex, setImageIndex] = useState(0);
+  const [imageIndex, setImageIndex] = useState(0);
 
   return (
     <div className={styles.imageContainer}>
@@ -16,7 +15,9 @@ const ProductImages = ({ productImage, images }) => {
             : urlFor(images[imageIndex - 1]).url()
         }
         className={
-          imageIndex === 0 ?  styles.productDetailsImage : styles.otherImagesLarge
+          imageIndex === 0
+            ? styles.productDetailsImage
+            : styles.otherImagesLarge
         }
         width={imageIndex === 0 ? 500 : 400}
         height={imageIndex === 0 ? 500 : 400}

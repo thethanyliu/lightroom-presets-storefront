@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import Link from "next/link";
 import { AiOutlineLeft, AiOutlineShopping } from "react-icons/ai";
-import { useStateContext } from "@/context/StateContext";
 import { urlFor } from "@/lib/client";
+import { useStateContext } from "@/context/StateContext";
 import getStripe from "@/lib/getStripe";
 import { toast } from "react-hot-toast";
 import classes from "./Cart.module.css"
@@ -58,8 +58,8 @@ const Cart = () => {
         </div>
       ) : (
         <div className={classes.cartItems}>
-          {cartItems.map((item, index) => (
-            <div className={classes.cartProduct}>
+          {cartItems.map((item, i) => (
+            <div key={i} className={classes.cartProduct}>
               <img
                 src={urlFor(item?.productImage)}
                 width={100}

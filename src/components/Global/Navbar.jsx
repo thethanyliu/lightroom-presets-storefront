@@ -23,7 +23,6 @@ const Navbar = ({
   const [menuBar, setMenuBar] = useState(false);
 
   const { showCart, totalQty, setShowCart } = useStateContext();
-  console.log(totalQty);
 
   const pathname = usePathname();
 

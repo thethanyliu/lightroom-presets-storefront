@@ -2,7 +2,6 @@ import "@/styles/globals.css";
 import "@/styles/success.css";
 import React from "react";
 import { NextUIProvider } from "@nextui-org/react";
-import { Layout } from "@/components";
 import { StateContext } from "@/context/StateContext";
 import { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/react";
@@ -15,10 +14,8 @@ export default function App({ Component, pageProps }) {
     <>
       <NextUIProvider>
         <StateContext>
-          <Layout>
             <Toaster />
             <Component {...pageProps} />
-          </Layout>
         </StateContext>
       </NextUIProvider>
 

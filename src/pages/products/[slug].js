@@ -3,7 +3,6 @@ import { client } from "../../lib/client";
 import {
   Navbar,
   Footer,
-  Product,
   Info,
   ProductDetails,
   ProductImages,

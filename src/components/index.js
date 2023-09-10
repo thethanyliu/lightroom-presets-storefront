@@ -1,5 +1,6 @@
 export { default as BackDrop } from "./Cart/BackDrop";
 export { default as Cart } from "./Cart/Cart";
+export { default as CartInfo } from "./Checkout/CartInfo";
 export { default as FeaturedProduct } from "./Home/FeaturedProduct";
 export { default as FeaturedProducts } from "./Home/FeaturedProducts";
 export { default as Footer } from "./Global/Footer";

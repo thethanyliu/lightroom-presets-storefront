@@ -1,0 +1,165 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 5px;
+  margin: 0 5px;
+}
+
+.innerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.cartItemsInnerWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgb(30 41 59);
+  letter-spacing: 0.2px;
+}
+
+.checkoutTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: rgb(30 41 59);
+  letter-spacing: 0.2px;
+}
+
+.checkoutSubtitles {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgb(30 41 59);
+  letter-spacing: 0.2px;
+}
+
+.cartProduct {
+  display: flex;
+  gap: 18px;
+  padding: 20px 15px 20px 0;
+  align-items: center;
+  width: 100%;
+  border-bottom: #324d67 solid 0.2px;
+}
+
+.cartPics {
+  border-radius: 8px;
+}
+
+.cartItemDesc {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  color: #324d67;
+}
+
+.qty {
+  color: rgb(71 85 105);
+  font-size: 15px;
+}
+
+.titlePrice {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 1.5rem 0 0;
+}
+
+.nameQuantity {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.checkoutOuterWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.checkoutInnerWrapper {
+  display: flex;
+  flex-direction: column;
+  background: rgb(226 232 240);
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  max-height: 450px;
+  gap: 2px;
+}
+
+.priceInfo {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.promoContainer {
+  display: flex;
+  padding: 12px 0 0 0;
+  gap: 10px;
+  align-items: center;
+}
+
+.divider {
+  padding: 3px 0;
+  border-bottom: #324d67 0.2px solid;
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+  padding: 0 0 2rem 0;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    padding: 4rem 1rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .wrapper {
+    padding: 4rem 6rem;
+  }
+
+  .innerContainer {
+    display: grid;
+    grid-template-columns: 56% 36%;
+    gap: 8%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .wrapper {
+    padding: 4rem 15rem;
+  }
+}
+
+@media (min-width: 1800px) {
+  .wrapper {
+    padding: 4rem 20rem;
+  }
+
+  .modalContainer {
+    padding: 0 8rem 2rem 8rem;
+  }
+}

@@ -1,6 +1,6 @@
 .cartContainer {
   height: 100vh;
-  width: 280px;
+  width: 75%;
   background-color: white;
   padding: 40px 10px;
   position: fixed;
@@ -115,4 +115,22 @@
 .emptyCart h3 {
   font-weight: 600;
   font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  .cartContainer {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cartContainer {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .cartContainer {
+    width: 30%;
+  }
 }

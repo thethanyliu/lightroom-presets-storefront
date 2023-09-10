@@ -27,6 +27,7 @@ body,
   margin: auto;
   width: 100%;
   background-color: rgb(240, 245, 245);
+  min-height: 100vh;
 }
 
 li {

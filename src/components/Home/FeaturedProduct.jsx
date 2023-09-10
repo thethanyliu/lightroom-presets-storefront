@@ -6,8 +6,8 @@ const FeaturedProduct = ({ featuredProducts }) => {
   return (
     <div className={classes.feature}>
       <div className={classes.featureProducts}>
-        {featuredProducts.map((product) => {
-          return <Product product={product} width={350} height={350} />;
+        {featuredProducts.map((product, i) => {
+          return <Product key={i} product={product} width={350} height={350} />;
         })}
       </div>
     </div>
