@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { useStateContext } from "@/context/StateContext";
-import { AiOutlineShopping } from "react-icons/ai";
+import { AiOutlineCloseCircle, AiOutlineShopping } from "react-icons/ai";
+import { FaBars } from "react-icons/fa";
 import { Cart, BackDrop } from "..";
 import styles from "./Navbar.module.css";
 import {
@@ -21,9 +22,11 @@ const Navbar = ({
   darkMode = false,
 }) => {
   const [menuBar, setMenuBar] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
 
   const { showCart, totalQty, setShowCart } = useStateContext();
 
+  const router = useRouter();
   const pathname = usePathname();
 
   const navLinks = [
@@ -76,8 +79,18 @@ const Navbar = ({
           : styles.nbWrapperSecond
       }
     >
+      <div
+        className={
+          !menuBar && !darkMode
+            ? styles.barContainerLight
+            : styles.barContainerDark
+        }
+        onClick={() => setShowSidebar((prev) => !prev)}
+      >
+        {!showSidebar ? <FaBars /> : <AiOutlineCloseCircle />}
+      </div>
       <div className={styles.nbFirstContainer}>
-        <Link href="\">
+        <Link href="/">
           {!menuBar && !darkMode ? (
             <Image
               src="/assets/Logos/site-logo-light.png"
@@ -121,11 +134,11 @@ const Navbar = ({
       <div className={styles.cartContainer}>
         <div
           className={!menuBar && !darkMode ? styles.shopLight : styles.shopDark}
-          onClick={() => setShowCart(true)}
+          onClick={() => router.push("/checkout")}
         >
           <AiOutlineShopping />
         </div>
-        {totalQty !== 0 && <span className={styles.cartQty}>{totalQty}</span>}
+        {totalQty !== 0 && <div className={styles.cartQty}>{totalQty}</div>}
       </div>
       {showCart && <BackDrop />}
       {showCart && <Cart />}

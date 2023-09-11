@@ -21,9 +21,9 @@ const Home = ({ products }) => {
         <Navbar />
         <Hero />
         <FeaturedProducts products={products} />
-        <ImageSection />
         <StatsSection text={copyWrite} showIncludes={false} />
         <Info />
+        <ImageSection />
       </Layout>
       <Footer />
     </>

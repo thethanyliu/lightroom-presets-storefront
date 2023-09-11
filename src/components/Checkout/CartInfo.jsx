@@ -2,11 +2,34 @@ import React from "react";
 import Image from "next/image";
 import { urlFor } from "@/lib/client";
 import { useStateContext } from "@/context/StateContext";
+import getStripe from "@/lib/getStripe";
 import { Input, Button } from "@nextui-org/react";
+import { toast } from "react-hot-toast";
 import styles from "./CartInfo.module.css";
 
 const CartInfo = () => {
-  const { cartItems, totalPrice, removeFromCart } = useStateContext();
+  const { totalPrice, cartItems, removeFromCart } = useStateContext();
+
+  const handleCheckout = async () => {
+    const stripe = await getStripe();
+
+    const res = await fetch("/api/stripe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(cartItems),
+    });
+
+    if (res.status === 500) {
+      return console.log("Error");
+    }
+
+    const data = await res.json();
+    toast.loading("Redirecting...");
+
+    return stripe.redirectToCheckout({ sessionId: data.id }); // an instance of a checkout
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -20,8 +43,8 @@ const CartInfo = () => {
                 <Image
                   src={urlFor(item.productImage).url()}
                   alt="product image"
-                  width={60}
-                  height={60}
+                  width={80}
+                  height={80}
                   className={styles.cartPics}
                 />
                 <div className={styles.cartItemDesc}>
@@ -68,10 +91,19 @@ const CartInfo = () => {
             </div>
             <div className={styles.promoContainer}>
               <Input label="PROMO CODE" />
-              <Button size="md" radius="sm" color="primary">
+              <Button size="md" radius="sm" variant="bordered">
                 APPLY
               </Button>
             </div>
+            <Button
+              isDisabled={cartItems.length === 0}
+              radius="lg"
+              className="mt-2"
+              color="primary"
+              onPress={handleCheckout}
+            >
+              Checkout
+            </Button>
           </div>
         </div>
       </div>

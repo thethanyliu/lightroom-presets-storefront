@@ -26,18 +26,12 @@ const Footer = () => {
         <div className={classes.supportLinkContainer}>
           <h4 className={classes.support}>Popular</h4>
           <div className={classes.supportLink}>
-            <Link
-              style={linkStyle}
-              href="/products/master-collection"
-            >
+            <Link style={linkStyle} href="/products/master-collection">
               Master Collection
             </Link>
           </div>
           <div className={classes.supportLink}>
-            <Link
-              style={linkStyle}
-              href="/products/urbanized-preset-bundle"
-            >
+            <Link style={linkStyle} href="/products/urbanized-preset-bundle">
               Urbanized
             </Link>
           </div>
@@ -53,26 +47,17 @@ const Footer = () => {
         <div className={classes.presetLinkContainer}>
           <h4 className={classes.support}>Support</h4>
           <div className={classes.supportLink}>
-            <Link
-              style={linkStyle}
-              href="/terms-and-conditions"
-            >
+            <Link style={linkStyle} href="/terms-and-conditions">
               Terms and conditons
             </Link>
           </div>
           <div className={classes.supportLink}>
-            <Link
-              style={linkStyle}
-              href="/privacy-policy"
-            >
+            <Link style={linkStyle} href="/privacy-policy">
               Privacy policy
             </Link>
           </div>
           <div className={classes.supportLink}>
-            <Link
-              style={linkStyle}
-              href="/contact"
-            >
+            <Link style={linkStyle} href="/contact">
               Contact
             </Link>
           </div>
@@ -82,6 +67,8 @@ const Footer = () => {
           <div className={classes.supportLink}>
             <a
               style={linkStyle}
+              target="_blank"
+              rel="noreferrer"
               href="https://www.instagram.com/pnutpresets/"
             >
               Instagram

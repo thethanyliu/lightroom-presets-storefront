@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   padding: 2rem 0;
+  background: rgb(243, 239, 239);
 }
 
 .imageContainer {
@@ -22,13 +23,13 @@
 
 .title {
   padding-bottom: 12px;
-  font-size: 35px;
+  font-size: 2.5rem;
   text-align: center;
 }
 
 .text {
   color: rgb(90, 82, 82);
-  padding: 0 3rem 0 3rem;
+  padding: 0 2rem;
   font-size: medium;
 }
 

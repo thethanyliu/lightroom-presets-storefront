@@ -8,7 +8,6 @@ import { Analytics } from "@vercel/analytics/react";
 
 export default function App({ Component, pageProps }) {
   // the "Component" component refers to the current page
-
   // make sure prices are handled in the backend
   return (
     <>

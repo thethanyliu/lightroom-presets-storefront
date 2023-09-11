@@ -36,27 +36,29 @@
 .cartContainer {
   display: flex;
   position: relative;
-  padding-right: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
   cursor: pointer;
 }
 
 .shopLight {
-  position: relative;
+  display: flex;
   font-size: 28px;
   color: rgb(241 245 249);
   cursor: pointer;
 }
 
 .shopDark {
-  position: relative;
-  font-size: 25px;
+  display: flex;
+  font-size: 28px;
   color: rgb(41 37 36);
   cursor: pointer;
 }
 
 .cartQty {
   position: absolute;
-  right: 8px;
+  right: 14px;
   top: 1px;
   font-size: 8px;
   color: #eee;
@@ -77,6 +79,28 @@
   display: none;
 }
 
+.barContainerLight {
+  display: flex;
+  font-size: 20px;
+  cursor: pointer;
+  color: rgb(241 245 249);
+  align-items: center;
+  margin: auto 12px auto 0;
+  padding-left: 12px;
+  width: 60px;
+}
+
+.barContainerDark {
+  display: flex;
+  font-size: 20px;
+  cursor: pointer;
+  color: rgb(41 37 36);
+  align-items: center;
+  margin: auto 12px auto 0;
+  padding-left: 12px;
+  width: 60px;
+}
+
 .hidden {
   display: none;
 }
@@ -84,6 +108,16 @@
 @media (min-width: 768px) {
   .linkItem {
     padding-left: 30px;
+  }
+
+  .barContainerLight {
+    font-size: 25px;
+    padding: 0;
+  }
+
+  .barContainerDark {
+    font-size: 25px;
+    padding: 0;
   }
 }
 
@@ -93,5 +127,13 @@
     align-items: center;
     justify-content: center;
     padding-top: 3px;
+  }
+
+  .barContainerLight {
+    display: none;
+  }
+
+  .barContainerDark {
+    display: none;
   }
 }
