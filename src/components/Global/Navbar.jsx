@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -20,11 +20,14 @@ const Navbar = ({
   bgOn = 50,
   initiallyTransparent = true,
   darkMode = false,
+  showBottomBorder=true,
 }) => {
   const [menuBar, setMenuBar] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
 
-  const { showCart, totalQty, setShowCart } = useStateContext();
+  const { showCart, totalQty } = useStateContext();
+
+  const navbarRef = useRef(null);
 
   const router = useRouter();
   const pathname = usePathname();
@@ -62,12 +65,20 @@ const Navbar = ({
     }
   };
 
+  const clickHandler = (e) => {
+    if (navbarRef.current && !navbarRef.current.contains(e.target)) {
+      setShowSidebar(false);
+    }
+  };
+
   useEffect(() => {
     handleChangeNavBG();
 
     window.addEventListener("scroll", handleChangeNavBG);
+    window.addEventListener("mousedown", clickHandler);
     return () => {
       window.removeEventListener("scroll", handleChangeNavBG);
+      window.removeEventListener("mousedown", clickHandler);
     };
   });
 
@@ -77,6 +88,11 @@ const Navbar = ({
         !menuBar && initiallyTransparent
           ? styles.nbWrapper
           : styles.nbWrapperSecond
+      }
+      style={
+        !menuBar && showBottomBorder
+          ? { borderBottom: "#ccc 0.1px solid" }
+          : null
       }
     >
       <div
@@ -131,6 +147,37 @@ const Navbar = ({
           ))}
         </ul>
       </div>
+      <ul
+        className={showSidebar ? styles.navBarUlMobile : styles.hidden}
+        ref={navbarRef}
+      >
+        <li className={styles.closeContainerDark}>
+          {showSidebar ? (
+            <AiOutlineCloseCircle
+              onClick={() => setShowSidebar((prev) => !prev)}
+            />
+          ) : (
+            <div className={styles.hidden} />
+          )}
+        </li>
+        {navLinks?.map((navLink, i) => (
+          <li
+            key={i}
+            className={styles.linkItemMobile}
+            style={
+              showSidebar
+                ? router.pathname === navLink.link
+                  ? linkStyleMobileUnderline
+                  : linkStyleMobile
+                : { display: "none" }
+            }
+          >
+            <Link key={navLink.name} href={navLink.on ? navLink.link : "#"}>
+              <span>{navLink.name}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
       <div className={styles.cartContainer}>
         <div
           className={!menuBar && !darkMode ? styles.shopLight : styles.shopDark}
