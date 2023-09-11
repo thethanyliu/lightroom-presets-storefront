@@ -8,24 +8,30 @@ const ProductImages = ({ productImage, images }) => {
 
   return (
     <div className={styles.imageContainer}>
-      <Image
-        src={
-          imageIndex === 0
-            ? urlFor(productImage).url()
-            : urlFor(images[imageIndex - 1]).url()
-        }
-        className={
-          imageIndex === 0
-            ? styles.productDetailsImage
-            : styles.otherImagesLarge
-        }
-        width={imageIndex === 0 ? 500 : 400}
-        height={imageIndex === 0 ? 500 : 400}
-      />
+      {imageIndex === 0 ? (
+        <Image
+          src={urlFor(productImage).url()}
+          alt="product image"
+          className={styles.productDetailsImage}
+          width={500}
+          height={500}
+        />
+      ) : (
+        <Image
+          src={urlFor(images[imageIndex - 1]).url()}
+          alt="product image"
+          className={styles.otherImagesLarge}
+          width={400}
+          height={400}
+        />
+      )}
       <div className={styles.otherImagesContainer}>
-        <img
-          src={urlFor(productImage)}
+        <Image
+          src={urlFor(productImage).url()}
+          alt="other images"
           className={styles.otherProductImage}
+          width={70}
+          height={70}
           onClick={() => setImageIndex(0)}
         />
         {images?.map((image, i) => {

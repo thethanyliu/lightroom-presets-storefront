@@ -5,6 +5,7 @@ import {
   Hero,
   ImageSection,
   Info,
+  Layout,
   Navbar,
   StatsSection,
 } from "../components";
@@ -15,15 +16,17 @@ const Home = ({ products }) => {
     "Upgrading your photo game has never been easier. With over 40+ Lightroom mobile (XMP files) and Lightroom desktop presets (DNG files) in our Master Collection, each designed to enhance your creative workflow, you can be sure that there will be a preset to make every photo look spectacular.";
 
   return (
-    <div className="home">
-      <Navbar />
-      <Hero />
-      <FeaturedProducts products={products} />
-      <ImageSection />
-      <StatsSection text={copyWrite} showIncludes={false} />
-      <Info />
+    <>
+      <Layout>
+        <Navbar />
+        <Hero />
+        <FeaturedProducts products={products} />
+        <ImageSection />
+        <StatsSection text={copyWrite} showIncludes={false} />
+        <Info />
+      </Layout>
       <Footer />
-    </div>
+    </>
   );
 };
 

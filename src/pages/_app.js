@@ -14,11 +14,10 @@ export default function App({ Component, pageProps }) {
     <>
       <NextUIProvider>
         <StateContext>
-            <Toaster />
-            <Component {...pageProps} />
+          <Toaster />
+          <Component {...pageProps} />
         </StateContext>
       </NextUIProvider>
-
       <Analytics />
     </>
   );

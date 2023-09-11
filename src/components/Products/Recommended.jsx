@@ -5,7 +5,7 @@ import styles from "./Recommended.module.css";
 const Recommended = ({ products, relatedProducts }) => {
   return (
     <div className={styles.recommendedProductsContainer}>
-      <h2 className={styles.recProducts}>Recommended Products</h2>
+      <h2 className={`${styles.recProducts} text-4xl font-bold`}>Recommended</h2>
       <div className={styles.recommendedProducts}>
         {products.map((product, i) => {
           if (relatedProducts.includes(product.name)) {

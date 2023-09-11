@@ -1,9 +1,24 @@
-.info {
+.wrapper {
   display: flex;
-  font-size: 40px;
-  gap: 20px;
   justify-content: center;
   padding: 3.5rem 0 3.5rem 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  font-size: 40px;
+  gap: 20px;
+  background: rgb(222, 177, 177);
+  background: linear-gradient(
+    90deg,
+    rgba(222, 177, 177, 1) 0%,
+    rgba(235, 218, 218, 1) 100%
+  );
+  padding: 2rem 5rem;
+  border-radius: 10px;
 }
 
 .infoDiv {
@@ -18,6 +33,11 @@
 }
 
 @media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    padding: 2rem 4rem;
+  }
+
   .info {
     gap: 40px;
     font-size: 50px;
@@ -29,6 +49,10 @@
 }
 
 @media (min-width: 976px) {
+  .container {
+    padding: 2.5rem 4rem;
+  }
+
   .info {
     padding: 5rem 0 5rem 0;
   }

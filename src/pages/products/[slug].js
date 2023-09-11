@@ -1,9 +1,10 @@
 import React from "react";
 import { client } from "../../lib/client";
 import {
-  Navbar,
   Footer,
   Info,
+  Layout,
+  Navbar,
   ProductDetails,
   ProductImages,
   StatsSection,
@@ -18,21 +19,23 @@ const ProductSlug = ({ product, products }) => {
 
   return (
     <>
-      <Navbar bgOn={10} darkMode={true} />
-      <div className="product-details">
-        <ProductImages productImage={productImage} images={images} />
-        <ProductDetails
-          product={product}
-          name={name}
-          price={price}
-          presetNumber={presetNumber}
-        />
-      </div>
-      <div className="product-details-info">
-        <Info />
-      </div>
-      <StatsSection text={copyWrite} showIncludes={true} />
-      <Recommended relatedProducts={relatedProducts} products={products} />
+      <Layout>
+        <Navbar bgOn={10} darkMode={true} />
+        <div className="product-details">
+          <ProductImages productImage={productImage} images={images} />
+          <ProductDetails
+            product={product}
+            name={name}
+            price={price}
+            presetNumber={presetNumber}
+          />
+        </div>
+        <div className="product-details-info">
+          <Info />
+        </div>
+        <StatsSection text={copyWrite} showIncludes={true} />
+        <Recommended relatedProducts={relatedProducts} products={products} />
+      </Layout>
       <Footer />
     </>
   );

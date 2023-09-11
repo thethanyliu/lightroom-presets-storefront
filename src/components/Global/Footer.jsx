@@ -4,13 +4,19 @@ import Image from "next/image";
 import classes from "./Footer.module.css";
 
 const Footer = () => {
+  const linkStyle = {
+    textDecoration: "none",
+    color: "rgb(241 245 249)",
+    fontWeight: 400,
+  };
+
   return (
     <footer>
       <div className={classes.container}>
         <div className={classes.socialContainer}>
           <div className={classes.footerLogo}>
             <Image
-              src="/assets/Logos/site-logo-dark.png"
+              src="/assets/Logos/site-logo-light.png"
               alt="site logo"
               width={100}
               height={100}
@@ -21,11 +27,7 @@ const Footer = () => {
           <h4 className={classes.support}>Popular</h4>
           <div className={classes.supportLink}>
             <Link
-              style={{
-                textDecoration: "none",
-                color: "grey",
-                fontWeight: 500,
-              }}
+              style={linkStyle}
               href="/products/master-collection"
             >
               Master Collection
@@ -33,11 +35,7 @@ const Footer = () => {
           </div>
           <div className={classes.supportLink}>
             <Link
-              style={{
-                textDecoration: "none",
-                color: "grey",
-                fontWeight: 500,
-              }}
+              style={linkStyle}
               href="/products/urbanized-preset-bundle"
             >
               Urbanized
@@ -45,11 +43,7 @@ const Footer = () => {
           </div>
           <div className={classes.supportLink}>
             <Link
-              style={{
-                textDecoration: "none",
-                color: "grey",
-                fontWeight: 500,
-              }}
+              style={linkStyle}
               href="/products/exotic-islande-preset-bundle"
             >
               Exotic Islande
@@ -60,11 +54,7 @@ const Footer = () => {
           <h4 className={classes.support}>Support</h4>
           <div className={classes.supportLink}>
             <Link
-              style={{
-                textDecoration: "none",
-                color: "grey",
-                fontWeight: 500,
-              }}
+              style={linkStyle}
               href="/terms-and-conditions"
             >
               Terms and conditons
@@ -72,11 +62,7 @@ const Footer = () => {
           </div>
           <div className={classes.supportLink}>
             <Link
-              style={{
-                textDecoration: "none",
-                color: "grey",
-                fontWeight: 500,
-              }}
+              style={linkStyle}
               href="/privacy-policy"
             >
               Privacy policy
@@ -84,11 +70,7 @@ const Footer = () => {
           </div>
           <div className={classes.supportLink}>
             <Link
-              style={{
-                textDecoration: "none",
-                color: "grey",
-                fontWeight: 500,
-              }}
+              style={linkStyle}
               href="/contact"
             >
               Contact
@@ -99,11 +81,7 @@ const Footer = () => {
           <h4 className={classes.support}>Social</h4>
           <div className={classes.supportLink}>
             <a
-              style={{
-                textDecoration: "none",
-                color: "grey",
-                fontWeight: 500,
-              }}
+              style={linkStyle}
               href="https://www.instagram.com/pnutpresets/"
             >
               Instagram

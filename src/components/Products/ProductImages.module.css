@@ -1,4 +1,8 @@
 .imageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   cursor: pointer;
 }
@@ -24,8 +28,6 @@
 
 .otherProductImage {
   border-radius: 8px;
-  width: 70px;
-  height: 70px;
   cursor: pointer;
 }
 

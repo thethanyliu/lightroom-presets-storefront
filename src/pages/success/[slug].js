@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
-import { useStateContext } from "@/context/StateContext";
-import { client } from "../../lib/client";
-import Link from "next/link";
 import { useRouter } from "next/router";
+import Link from "next/link";
+import { client } from "../../lib/client";
+import { useStateContext } from "@/context/StateContext";
+import { Footer, Layout, Navbar } from "@/components";
 import { BsBagCheckFill } from "react-icons/bs";
 
 const successSlug = ({ products }) => {
@@ -31,33 +32,40 @@ const successSlug = ({ products }) => {
   };
 
   return (
-    <div className="success-wrapper">
-      <div className="success">
-        <p className="back-fill-icon">
-          <BsBagCheckFill />
-        </p>
-        <h2>Thank you for your order.</h2>
-        <p className="email-msg">Check your email inbox for the receipt.</p>
-        <Link href="/">
-          <button type="button" className="continue-btn">
-            Continue Shopping
-          </button>
-        </Link>
-        <div>
-          {purchasedItems.map((item) => (
+    <>
+      <Layout>
+        <Navbar bgOn={10} darkMode={true} />
+        <div className="success-wrapper">
+          <div className="success">
+            <p className="back-fill-icon">
+              <BsBagCheckFill />
+            </p>
+            <h2>Thank you for your order.</h2>
+            <p className="email-msg">Check your email inbox for the receipt.</p>
+            <Link href="/">
+              <button type="button" className="continue-btn">
+                Continue Shopping
+              </button>
+            </Link>
             <div>
-              {item.name}: <br />
-              <a href={getUrlFromId(item.dng_zip.asset._ref)}>
-                DNG (LR Desktop) Files
-              </a> <br />
-              <a href={getUrlFromId(item.zip_file.asset._ref)}>
-                DNG (LR Mobile) Files
-              </a>
+              {purchasedItems.map((item) => (
+                <div>
+                  {item.name}: <br />
+                  <a href={getUrlFromId(item.dng_zip.asset._ref)}>
+                    DNG (LR Desktop) Files
+                  </a>{" "}
+                  <br />
+                  <a href={getUrlFromId(item.zip_file.asset._ref)}>
+                    DNG (LR Mobile) Files
+                  </a>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </div>
+      </Layout>
+      <Footer />
+    </>
   );
 };
 
