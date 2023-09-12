@@ -2,10 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --position: 50%;
-}
-
+html,
 body,
 * {
   padding: 0;
@@ -15,9 +12,12 @@ body,
   box-sizing: border-box;
   overflow-x: hidden;
 }
-::-webkit-scrollbar {
-  width: 0px;
-}
+
+/* @media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+} */
 
 .main-container {
   margin: auto;

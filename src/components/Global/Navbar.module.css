@@ -7,14 +7,14 @@
 
 .navBarUlMobile {
   position: absolute;
-  width: 100vw;
+  width: 100%;
   background-color: rgb(241 245 249);
   margin: 0;
   padding: 12px 0 5px 12px;
   left: 0;
   top: 0;
-  z-index: 1000;
-  height: max-content;
+  z-index: 10000;
+  gap: 30px;
 }
 
 .nbWrapper {
@@ -64,7 +64,6 @@
   display: flex;
   font-size: 28px;
   color: rgb(241 245 249);
-  padding-right: 12px;
   cursor: pointer;
 }
 
@@ -72,7 +71,6 @@
   display: flex;
   font-size: 28px;
   color: rgb(41 37 36);
-  padding-right: 12px;
   cursor: pointer;
 }
 

@@ -20,7 +20,7 @@ const Navbar = ({
   bgOn = 50,
   initiallyTransparent = true,
   darkMode = false,
-  showBottomBorder=true,
+  showBottomBorder = true,
 }) => {
   const [menuBar, setMenuBar] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
@@ -83,69 +83,84 @@ const Navbar = ({
   });
 
   return (
-    <div
-      className={
-        !menuBar && initiallyTransparent
-          ? styles.nbWrapper
-          : styles.nbWrapperSecond
-      }
-      style={
-        !menuBar && showBottomBorder
-          ? { borderBottom: "#ccc 0.1px solid" }
-          : null
-      }
-    >
+    <header>
       <div
         className={
-          !menuBar && !darkMode
-            ? styles.barContainerLight
-            : styles.barContainerDark
+          !menuBar && initiallyTransparent
+            ? styles.nbWrapper
+            : styles.nbWrapperSecond
         }
-        onClick={() => setShowSidebar((prev) => !prev)}
+        style={
+          !menuBar && showBottomBorder
+            ? { borderBottom: "#ccc 0.1px solid" }
+            : null
+        }
       >
-        {!showSidebar ? <FaBars /> : <AiOutlineCloseCircle />}
-      </div>
-      <div className={styles.nbFirstContainer}>
-        <Link href="/">
-          {!menuBar && !darkMode ? (
-            <Image
-              src="/assets/Logos/site-logo-light.png"
-              alt="site logo"
-              width={64}
-              height={64}
-            />
-          ) : (
-            <Image
-              src="/assets/Logos/site-logo-dark.png"
-              alt="site logo"
-              width={64}
-              height={64}
-            />
-          )}
-        </Link>
-      </div>
-      <div className={styles.linksContainer}>
-        <ul className={styles.navbarUl}>
-          {navLinks?.map((navLink, i) => (
-            <li
-              key={i}
-              className={styles.linkItem}
-              style={
-                !menuBar && !darkMode
-                  ? pathname === navLink.link
-                    ? linkStyleDesktopLightUnderline
-                    : linkStyleDesktopLight
-                  : pathname === navLink.link
-                  ? linkStyleDesktopDarkUnderline
-                  : linkStyleDesktopDark
-              }
-            >
-              <Link key={navLink.name} href={navLink.on ? navLink.link : "#"}>
-                <span>{navLink.name}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div
+          className={
+            !menuBar && !darkMode
+              ? styles.barContainerLight
+              : styles.barContainerDark
+          }
+          onClick={() => setShowSidebar((prev) => !prev)}
+        >
+          {!showSidebar ? <FaBars /> : <AiOutlineCloseCircle />}
+        </div>
+        <div className={styles.nbFirstContainer}>
+          <Link href="/">
+            {!menuBar && !darkMode ? (
+              <Image
+                src="/assets/Logos/site-logo-light.png"
+                alt="site logo"
+                width={64}
+                height={64}
+              />
+            ) : (
+              <Image
+                src="/assets/Logos/site-logo-dark.png"
+                alt="site logo"
+                width={64}
+                height={64}
+              />
+            )}
+          </Link>
+        </div>
+        <div className={styles.linksContainer}>
+          <ul className={styles.navbarUl}>
+            {navLinks?.map((navLink, i) => (
+              <li
+                key={i}
+                className={styles.linkItem}
+                style={
+                  !menuBar && !darkMode
+                    ? pathname === navLink.link
+                      ? linkStyleDesktopLightUnderline
+                      : linkStyleDesktopLight
+                    : pathname === navLink.link
+                    ? linkStyleDesktopDarkUnderline
+                    : linkStyleDesktopDark
+                }
+              >
+                <Link key={navLink.name} href={navLink.on ? navLink.link : "#"}>
+                  <span>{navLink.name}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className={styles.cartContainer}>
+          <div
+            className={
+              !menuBar && !darkMode ? styles.shopLight : styles.shopDark
+            }
+            onClick={() => router.push("/checkout")}
+          >
+            <AiOutlineShopping />
+          </div>
+          {totalQty !== 0 && <div className={styles.cartQty}>{totalQty}</div>}
+        </div>
+        {showCart && <BackDrop />}
+        {showCart && <Cart />}
       </div>
       <ul
         className={showSidebar ? styles.navBarUlMobile : styles.hidden}
@@ -164,32 +179,25 @@ const Navbar = ({
           <li
             key={i}
             className={styles.linkItemMobile}
-            style={
-              showSidebar
-                ? router.pathname === navLink.link
-                  ? linkStyleMobileUnderline
-                  : linkStyleMobile
-                : { display: "none" }
-            }
+            style={!showSidebar ? { display: "none" } : null}
           >
             <Link key={navLink.name} href={navLink.on ? navLink.link : "#"}>
-              <span>{navLink.name}</span>
+              <span
+                style={
+                  showSidebar
+                    ? pathname === navLink.link
+                      ? linkStyleMobileUnderline
+                      : linkStyleMobile
+                    : { display: "none" }
+                }
+              >
+                {navLink.name}
+              </span>
             </Link>
           </li>
         ))}
       </ul>
-      <div className={styles.cartContainer}>
-        <div
-          className={!menuBar && !darkMode ? styles.shopLight : styles.shopDark}
-          onClick={() => router.push("/checkout")}
-        >
-          <AiOutlineShopping />
-        </div>
-        {totalQty !== 0 && <div className={styles.cartQty}>{totalQty}</div>}
-      </div>
-      {showCart && <BackDrop />}
-      {showCart && <Cart />}
-    </div>
+    </header>
   );
 };
 
