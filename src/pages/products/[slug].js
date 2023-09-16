@@ -66,6 +66,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
 
   return {
     props: { product, products },
+    revalidate: 60 * 60 * 24, // seconds
   };
 };
 

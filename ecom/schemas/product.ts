@@ -18,14 +18,6 @@ export default {
       },
     },
     {
-      name: 'beforeAfterImages',
-      title: 'Before and After Images',
-      type: 'array',
-      of: [
-        {type: 'image'}
-      ],
-    },
-    {
       name: 'name',
       title: 'Name',
       type: 'string',

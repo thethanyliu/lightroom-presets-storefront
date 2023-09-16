@@ -27,12 +27,13 @@ const product = ({ products }) => {
   );
 };
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const query = '*[_type == "product"]'; // get all products
   const products = await client.fetch(query);
 
   return {
     props: { products },
+    revalidate: 60 * 60 * 24, // seconds
   };
 };
 
