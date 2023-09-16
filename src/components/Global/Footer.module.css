@@ -8,6 +8,7 @@
 }
 
 .support {
+  display: flex;
   font-size: medium;
   font-weight: 600;
   padding: 8px 0 8px 0;
@@ -21,22 +22,11 @@
 .supportLinkContainer {
   display: flex;
   flex-direction: column;
-  padding-top: 2rem;
-}
-
-.presetLinkContainer {
-  display: flex;
-  flex-direction: column;
-  padding-top: 2rem;
-}
-
-.socialLinkContainer {
-  display: flex;
-  flex-direction: column;
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 
 .supportLink {
+  display: flex;
   padding-bottom: 5px;
 }
 
@@ -56,7 +46,6 @@
   gap: 10px;
   justify-content: center;
   background: rgb(68 64 60);
-  /* background: rgb(248, 246, 246); */
 }
 
 @media (min-width: 768px) {
@@ -65,10 +54,6 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
     height: 180px;
     padding: 0 1rem 2rem 1rem;
-  }
-
-  .footerLogo {
-    padding: 1rem 0 2.5rem 0;
   }
 
   .socialContainer {

@@ -39,6 +39,10 @@
   margin-top: 10px;
 }
 
+.hidden {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .otherImagesLarge {
     width: 500px;

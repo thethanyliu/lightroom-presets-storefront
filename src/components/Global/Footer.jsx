@@ -44,7 +44,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div className={classes.presetLinkContainer}>
+        <div className={classes.supportLinkContainer}>
           <h4 className={classes.support}>Support</h4>
           <div className={classes.supportLink}>
             <Link style={linkStyle} href="/terms-and-conditions">
@@ -62,7 +62,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div className={classes.socialLinkContainer}>
+        <div className={classes.supportLinkContainer}>
           <h4 className={classes.support}>Social</h4>
           <div className={classes.supportLink}>
             <a

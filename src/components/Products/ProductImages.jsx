@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import { client, urlFor } from "../../lib/client";
+import { urlFor } from "../../lib/client";
 import styles from "./ProductImages.module.css";
 
 const ProductImages = ({ productImage, images }) => {
@@ -8,7 +8,7 @@ const ProductImages = ({ productImage, images }) => {
 
   return (
     <div className={styles.imageContainer}>
-      {imageIndex === 0 ? (
+      {/* {imageIndex === 0 ? (
         <Image
           src={urlFor(productImage).url()}
           alt="product image"
@@ -24,7 +24,23 @@ const ProductImages = ({ productImage, images }) => {
           width={400}
           height={400}
         />
-      )}
+      )} */}
+      <Image
+        src={urlFor(productImage).url()}
+        alt="product image"
+        className={
+          imageIndex === 0 ? styles.productDetailsImage : styles.hidden
+        }
+        width={500}
+        height={500}
+      />
+      <Image
+        src={imageIndex !== 0 && urlFor(images[imageIndex - 1]).url()}
+        alt="product image"
+        className={imageIndex !== 0 ? styles.otherImagesLarge : styles.hidden}
+        width={400}
+        height={400}
+      />
       <div className={styles.otherImagesContainer}>
         <Image
           src={urlFor(productImage).url()}
