@@ -3,6 +3,9 @@ import Head from "next/head";
 import { Footer, Layout, Navbar } from "@/components";
 
 const tutorial = () => {
+  const headingStyle = "text-4xl font-bold h-12";
+  const subHeadingStyle = "text-3xl font-semibold h-10";
+
   return (
     <>
       <Head>
@@ -16,9 +19,9 @@ const tutorial = () => {
         <Navbar bg={10} darkMode={true} />
         <div className="misc-container">
           <div className="misc-inner-container">
-            <h1>For Mobile </h1>
+            <h1 className={headingStyle}>Lightroom Mobile </h1>
             <br />
-            <h2>IOS</h2>
+            <h2 className={subHeadingStyle}>IOS</h2>
             <br />
             <p>
               Make sure that you have the Lightroom Mobile app installed on your
@@ -56,7 +59,7 @@ const tutorial = () => {
             </p>
             <br />
             <p>Repeat this process for all other DNG files. </p> <br />
-            <h2>Android</h2>
+            <h2 className={subHeadingStyle}>Android</h2>
             <br />
             <p>Download "Lightroom Mobile".</p>
             <br />
@@ -105,7 +108,7 @@ const tutorial = () => {
               new preset collection.
             </p>
             <br />
-            <h2>Lightroom Classic CC (Desktop) </h2>
+            <h1 className={headingStyle}>Lightroom Classic CC (Desktop) </h1>
             <br />
             <p>
               Download the "XMP Files" zip file on the checkout page. Open

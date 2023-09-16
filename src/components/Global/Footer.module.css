@@ -21,7 +21,7 @@
 .supportLinkContainer {
   display: flex;
   flex-direction: column;
-  padding-top: 1rem;
+  padding-top: 1.5rem;
 }
 
 .supportLink {
@@ -37,7 +37,7 @@
   color: rgb(241 245 249);
   text-align: center;
   padding-top: 20px;
-  padding: 30px 10px;
+  padding: 20px 10px;
   font-weight: 700;
   display: flex;
   flex-direction: column;
@@ -51,7 +51,7 @@
   .container {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    height: 180px;
+    height: 220px;
     padding: 0 1rem 2rem 1rem;
   }
 

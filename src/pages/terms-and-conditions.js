@@ -3,6 +3,8 @@ import Head from "next/head";
 import { Navbar, Footer } from "@/components";
 
 const termsAndConditions = () => {
+  const subHeadingStyle = "text-3xl font-semibold h-10";
+
   return (
     <>
       <Head>
@@ -21,14 +23,13 @@ const termsAndConditions = () => {
       <Navbar bgOn={10} darkMode={true} />
       <div className="misc-container">
         <div className="misc-inner-container">
-          <h1>Terms and Conditions</h1>
+          <h1 className="text-4xl font-bold h-12">Terms and Conditions</h1>
           <br />
           <p>Our website address is: pnutpresets.com </p>
+
           <br />
 
-          <h2>Acceptance of Terms</h2>
-          <br />
-          <h2>Intellectual Property</h2>
+          <h2 className={subHeadingStyle}>Intellectual Property</h2>
           <br />
           <p>
             All content on the Website, including but not limited to text,
@@ -39,7 +40,7 @@ const termsAndConditions = () => {
             written consent from PnutPresets.
           </p>
           <br />
-          <h2>User Conduct</h2>
+          <h2 className={subHeadingStyle}>User Conduct</h2>
           <br />
           <p>When using the Website, you agree to:</p>
           <br />
@@ -62,7 +63,7 @@ const termsAndConditions = () => {
           </ul>
           <br />
 
-          <h2>Third-Party Links</h2>
+          <h2 className={subHeadingStyle}>Third-Party Links</h2>
           <br />
           <p>
             The Website may contain links to third-party websites or services.
@@ -72,7 +73,7 @@ const termsAndConditions = () => {
             services at your own risk.
           </p>
           <br />
-          <h2>Disclaimer of Warranties </h2>
+          <h2 className={subHeadingStyle}>Disclaimer of Warranties </h2>
           <br />
           <p>
             The Website and its content are provided on an "as-is" basis without
@@ -81,7 +82,7 @@ const termsAndConditions = () => {
             the Website at your own risk.
           </p>
           <br />
-          <h2>Limitation of Liability</h2>
+          <h2 className={subHeadingStyle}>Limitation of Liability</h2>
           <br />
           <p>
             In no event shall PnutPresets be liable for any direct, indirect,
@@ -102,7 +103,7 @@ const termsAndConditions = () => {
             shall constitute your consent to such changes.
           </p>
           <br />
-          <h2>Governing Law</h2>
+          <h2 className={subHeadingStyle}>Governing Law</h2>
           <br />
           <p>
             These terms and conditions shall be governed by and construed in

@@ -18,7 +18,7 @@ const StatsSection = ({ text, showIncludes }) => {
           Includes
         </h3>
         <h1 className={classes.title}>Mobile + Desktop Presets</h1>
-        <p className={classes.text}>{text}</p>
+        <span className={classes.text}>{text}</span>
       </div>
     </div>
   );

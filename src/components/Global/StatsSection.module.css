@@ -3,15 +3,21 @@
   flex-direction: column;
   padding: 2rem 0;
   background: rgb(243, 239, 239);
+  margin: auto;
 }
 
 .imageContainer {
+  display: flex;
   margin: 0 2.5rem 0 2.5rem;
+  margin: auto;
 }
 
 .textContainer {
+  display: flex;
+  flex-direction: column;
   padding: 0 5px 0 5px;
-  margin: auto;
+  justify-content: center;
+  max-width: 480px;
 }
 
 .secondTitle {
@@ -62,15 +68,5 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     padding: 2rem 0;
-  }
-
-  .imageContainer {
-    margin: auto;
-  }
-}
-
-@media (min-width: 1440px) {
-  .text {
-    padding-right: 10rem;
   }
 }

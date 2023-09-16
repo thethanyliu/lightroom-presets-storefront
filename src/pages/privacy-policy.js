@@ -3,25 +3,21 @@ import Head from "next/head";
 import { Navbar, Footer } from "@/components";
 
 const PrivacyPolicy = () => {
+  const subHeadingStyle = "text-3xl font-semibold h-10";
+
   return (
     <>
       <Head>
         <title>PnutPresets | Privacy Policy</title>
-        <meta
-          name="description"
-          content="PnutPresets Privacy Policy"
-        />
-        <meta
-          property="og:title"
-          content="PnutPresets | Privacy Policy"
-        />
+        <meta name="description" content="PnutPresets Privacy Policy" />
+        <meta property="og:title" content="PnutPresets | Privacy Policy" />
         <meta property="og:description" content="PnutPresets Privacy Policy" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Navbar bgOn={10} darkMode={true} />
       <div className="misc-container">
         <div className="misc-inner-container">
-          <h1>Terms and Conditions</h1>
+          <h1 className="text-4xl font-bold h-12">Terms and Conditions</h1>
           <br />
           <p>Our website address is: pnutpresets.com </p>
           <br />
@@ -36,7 +32,9 @@ const PrivacyPolicy = () => {
             this statement.{" "}
           </p>
           <br />
-          <h2>Collection of your Personal Information </h2>
+          <h2 className={subHeadingStyle}>
+            Collection of your Personal Information{" "}
+          </h2>
           <br />
           <p>
             In order to better provide you with products and services offered on
@@ -78,7 +76,7 @@ const PrivacyPolicy = () => {
             additional personal or non-personal information in the future.
           </p>
           <br />
-          <h2>Use of your Personal Information</h2>
+          <h2 className={subHeadingStyle}>Use of your Personal Information</h2>
           <br />
           <p>
             PnutPresets collects and uses your personal information to operate
@@ -109,7 +107,7 @@ const PrivacyPolicy = () => {
             PnutPresets, or the public.
           </p>
           <br />
-          <h2>Tracking User Behavior</h2>
+          <h2 className={subHeadingStyle}>Tracking User Behavior</h2>
           <br />
           <p>
             PnutPresets may keep track of the websites and pages our users visit
@@ -136,7 +134,7 @@ const PrivacyPolicy = () => {
             provide general statistics regarding use of the PnutPresets website.
           </p>
           <br />
-          <h2>Use of Cookies</h2>
+          <h2 className={subHeadingStyle}>Use of Cookies</h2>
           <br />
           <p>
             The PnutPresets website may use “cookies” to help you personalize
@@ -170,7 +168,9 @@ const PrivacyPolicy = () => {
             visit.
           </p>
           <br />
-          <h2>Security of your Personal Information </h2>
+          <h2 className={subHeadingStyle}>
+            Security of your Personal Information{" "}
+          </h2>
           <br />
           <p>
             PnutPresets secures your personal information from unauthorized
@@ -200,7 +200,7 @@ const PrivacyPolicy = () => {
             exchanged between you and us through this Site cannot be guaranteed.
           </p>
           <br />
-          <h2>Children Under Thirteen</h2>
+          <h2 className={subHeadingStyle}>Children Under Thirteen</h2>
           <br />
           <p>
             PnutPresets collects personally identifiable information from
@@ -223,7 +223,7 @@ const PrivacyPolicy = () => {
             Statement of Privacy.
           </p>
           <br />
-          <h2>E-mail Communications</h2>
+          <h2 className={subHeadingStyle}>E-mail Communications</h2>
           <br />
           <p>
             From time to time, PnutPresets may contact you via email for the
@@ -233,7 +233,7 @@ const PrivacyPolicy = () => {
             an email from PnutPresets or click on a link therein.
           </p>
           <br />
-          <h2>External Data Storage Sites</h2>
+          <h2 className={subHeadingStyle}>External Data Storage Sites</h2>
           <br />
           <p>
             We may store your data on servers provided by third party hosting
@@ -242,7 +242,7 @@ const PrivacyPolicy = () => {
 
           <br />
 
-          <h2>Changes to this Statement</h2>
+          <h2 className={subHeadingStyle}>Changes to this Statement</h2>
           <br />
           <p>
             PnutPresets reserves the right to change this Privacy Policy from
@@ -257,7 +257,7 @@ const PrivacyPolicy = () => {
           </p>
           <br />
 
-          <h2>Contact Information</h2>
+          <h2 className={subHeadingStyle}>Contact Information</h2>
           <br />
 
           <p>
