@@ -1,9 +1,17 @@
 import React from "react";
+import Head from "next/head";
 import { Footer, Layout, Navbar } from "@/components";
 
 const tutorial = () => {
   return (
     <>
+      <Head>
+        <title>PnutPresets | Tutorial</title>
+        <meta name="description" content="PnutPresets Tutorial" />
+        <meta property="og:title" content="PnutPresets | Tutorial" />
+        <meta property="og:description" content="PnutPresets Tutorial" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <Layout>
         <Navbar bg={10} darkMode={true} />
         <div className="misc-container">

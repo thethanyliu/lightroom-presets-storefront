@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import { client } from "../../lib/client";
 import { Footer, Layout, Navbar, Product } from "@/components";
 
@@ -12,6 +13,13 @@ const product = ({ products }) => {
 
   return (
     <>
+      <Head>
+        <title>PnutPresets | Products</title>
+        <meta name="description" content="PnutPresets Products" />
+        <meta property="og:title" content="PnutPresets | Products" />
+        <meta property="og:description" content="PnutPresets Products" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <Layout>
         <Navbar bg={10} darkMode={true} />
         <div className="products">

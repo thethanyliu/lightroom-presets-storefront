@@ -1,4 +1,6 @@
 import React from "react";
+import Head from "next/head";
+import { client } from "@/lib/client";
 import {
   FeaturedProducts,
   Footer,
@@ -9,7 +11,6 @@ import {
   Navbar,
   StatsSection,
 } from "../components";
-import { client } from "@/lib/client";
 
 const Home = ({ products }) => {
   const copyWrite =
@@ -17,6 +18,13 @@ const Home = ({ products }) => {
 
   return (
     <>
+      <Head>
+        <title>PnutPresets</title>
+        <meta name="description" content="Empowering Creativity" />
+        <meta property="og:title" content="PnutPresets" />
+        <meta property="og:description" content="Empowering Creativity" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <Layout>
         <Navbar />
         <Hero />

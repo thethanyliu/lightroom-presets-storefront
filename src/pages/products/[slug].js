@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import { client } from "../../lib/client";
 import {
   Footer,
@@ -19,6 +20,16 @@ const ProductSlug = ({ product, products }) => {
 
   return (
     <>
+      <Head>
+        <title>PnutPresets | {name}</title>
+        <meta
+          name="description"
+          content={`${name} product details`}
+        />
+        <meta property="og:title" content={name} />
+        <meta property="og:description" content={`${name} product details`} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <Layout>
         <Navbar bgOn={10} darkMode={true} />
         <div className="product-details">
@@ -54,7 +65,7 @@ export const getStaticPaths = async () => {
     params: { slug: product.slug.current },
   }));
 
-  return { paths, fallback: "blocking" };
+  return { paths, fallback: false };
 };
 
 export const getStaticProps = async ({ params: { slug } }) => {
