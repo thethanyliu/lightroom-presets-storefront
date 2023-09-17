@@ -1,4 +1,5 @@
 import React from "react";
+import { setCookie, deleteCookie } from "cookies-next";
 import getStripe from "@/lib/getStripe";
 import { useStateContext } from "@/context/StateContext";
 import { Button } from "@nextui-org/react";
@@ -8,16 +9,20 @@ import { toast } from "react-hot-toast";
 import styles from "./ProductDetails.module.css";
 
 const ProductDetails = ({ product, name, price, presetNumber }) => {
-  const { onAddToCart, cartItems, setTotalPrice, setTotalQty, setCartItems } =
-    useStateContext();
+  const {
+    onAddToCart,
+    cartItems,
+    totalPrice,
+    setTotalPrice,
+    setTotalQty,
+    setCartItems,
+  } = useStateContext();
 
   const handleBuyNow = async () => {
     const stripe = await getStripe();
     const newCartItems = [...cartItems, { ...product, quantity: 1 }];
 
     setCartItems(newCartItems);
-    setTotalPrice((prev) => prev + price);
-    setTotalQty((prev) => prev + 1);
 
     const res = await fetch("/api/stripe", {
       method: "POST",
@@ -34,6 +39,10 @@ const ProductDetails = ({ product, name, price, presetNumber }) => {
     const data = await res.json();
 
     toast.loading("Redirecting...");
+
+    setCartItems([]);
+    setTotalPrice(0);
+    setTotalQty(0);
 
     return stripe.redirectToCheckout({ sessionId: data.id }); // an instance of a checkout
   };
@@ -66,6 +75,7 @@ const ProductDetails = ({ product, name, price, presetNumber }) => {
           variant="ghost"
           onPress={() => {
             onAddToCart(product);
+            setCookie("totalPrice", totalPrice, {secure: true, sameSite: "strict"});
           }}
         >
           Add to Cart

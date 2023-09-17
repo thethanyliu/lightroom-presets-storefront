@@ -21,7 +21,7 @@ const ProductSlug = ({ product, products }) => {
   return (
     <>
       <Head>
-        <title>PnutPresets | {name}</title>
+        <title>PnutPresets | Presets</title>
         <meta
           name="description"
           content={`${name} product details`}

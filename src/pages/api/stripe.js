@@ -1,8 +1,11 @@
 import Stripe from "stripe";
+import { getCookies } from "cookies-next";
 
 const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
+  const orderDetails = getCookies({ req, res });
+
   if (req.method === "POST") {
     try {
       // Create Checkout Sessions from body params.

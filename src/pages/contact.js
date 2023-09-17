@@ -13,7 +13,7 @@ const contact = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Layout>
-        <Navbar />
+        <Navbar bgOn={10} darkMode={true} />
         <ContactForm />
       </Layout>
       <Footer />

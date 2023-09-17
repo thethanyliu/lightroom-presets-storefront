@@ -56,7 +56,6 @@ li {
 .product-details {
   display: flex;
   flex-direction: column;
-  color: #49739b;
   margin-top: 5.5rem;
 }
 

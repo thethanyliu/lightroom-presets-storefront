@@ -1,10 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import classes from "./ProductDesc.module.css"
+import styles from "./ProductDetails.module.css";
 
 const ProductDesc = ({ presetNumber }) => {
   return (
-    <div className={classes.descText}>
+    <div className={styles.descText}>
       Presets best for  images. <br />
       What you will get: <br /> -<b>{presetNumber} </b>Custom Lightroom Desktop
       Presets <br /> -<b>{presetNumber}</b> Custom Lightroom Mobile Presets (DNG

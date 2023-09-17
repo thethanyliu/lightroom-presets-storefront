@@ -90,7 +90,7 @@ const CartInfo = () => {
               </h5>
             </div>
             <div className={styles.promoContainer}>
-              <Input label="PROMO CODE" />
+              <Input size="sm" label="PROMO CODE" />
               <Button size="md" radius="sm" variant="bordered">
                 APPLY
               </Button>
