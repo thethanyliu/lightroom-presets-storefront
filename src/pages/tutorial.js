@@ -3,8 +3,8 @@ import Head from "next/head";
 import { Footer, Layout, Navbar } from "@/components";
 
 const tutorial = () => {
-  const headingStyle = "text-4xl font-bold h-12";
-  const subHeadingStyle = "text-3xl font-semibold h-10";
+  const headingStyle = "text-2xl font-bold";
+  const subHeadingStyle = "text-2xl font-semibold";
 
   return (
     <>

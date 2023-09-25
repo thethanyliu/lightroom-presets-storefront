@@ -22,10 +22,7 @@ const ProductSlug = ({ product, products }) => {
     <>
       <Head>
         <title>PnutPresets | Presets</title>
-        <meta
-          name="description"
-          content={`${name} product details`}
-        />
+        <meta name="description" content={`${name} product details`} />
         <meta property="og:title" content={name} />
         <meta property="og:description" content={`${name} product details`} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -41,9 +38,7 @@ const ProductSlug = ({ product, products }) => {
             presetNumber={presetNumber}
           />
         </div>
-        <div className="product-details-info">
-          <Info />
-        </div>
+        <Info />
         <StatsSection text={copyWrite} showIncludes={true} />
         <Recommended relatedProducts={relatedProducts} products={products} />
       </Layout>

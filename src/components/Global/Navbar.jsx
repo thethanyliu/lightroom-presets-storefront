@@ -83,7 +83,7 @@ const Navbar = ({
   });
 
   return (
-    <header>
+    <>
       <div
         className={
           !menuBar && initiallyTransparent
@@ -197,7 +197,7 @@ const Navbar = ({
           </li>
         ))}
       </ul>
-    </header>
+    </>
   );
 };
 

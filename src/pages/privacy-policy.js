@@ -3,7 +3,7 @@ import Head from "next/head";
 import { Navbar, Footer } from "@/components";
 
 const PrivacyPolicy = () => {
-  const subHeadingStyle = "text-3xl font-semibold h-10";
+  const subHeadingStyle = "text-3xl font-semibold";
 
   return (
     <>
@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
       <Navbar bgOn={10} darkMode={true} />
       <div className="misc-container">
         <div className="misc-inner-container">
-          <h1 className="text-4xl font-bold h-12">Terms and Conditions</h1>
+          <h1 className="text-2xl font-bold h-12">Privacy Policy</h1>
           <br />
           <p>Our website address is: pnutpresets.com </p>
           <br />
