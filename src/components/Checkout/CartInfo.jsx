@@ -4,7 +4,6 @@ import { urlFor } from "@/lib/client";
 import { useStateContext } from "@/context/StateContext";
 import getStripe from "@/lib/getStripe";
 import { Input, Button } from "@nextui-org/react";
-import { toast } from "react-hot-toast";
 import styles from "./CartInfo.module.css";
 
 const CartInfo = () => {
@@ -29,7 +28,6 @@ const CartInfo = () => {
 
     const data = await res.json();
 
-    toast.loading("Redirecting...");
     setIsLoading(false);
     
     return stripe.redirectToCheckout({ sessionId: data.id }); // an instance of a checkout

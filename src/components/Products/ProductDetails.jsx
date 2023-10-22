@@ -4,7 +4,6 @@ import { useStateContext } from "@/context/StateContext";
 import { Button } from "@nextui-org/react";
 import { ProductDesc } from "..";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import { toast } from "react-hot-toast";
 import styles from "./ProductDetails.module.css";
 
 const ProductDetails = ({ product, name, price, presetNumber, slug }) => {
@@ -43,7 +42,6 @@ const ProductDetails = ({ product, name, price, presetNumber, slug }) => {
     
     onAddToCart(product, false);
     
-    toast.loading("Redirecting...");
     setIsLoading(false);
 
     return stripe.redirectToCheckout({ sessionId: data.id }); // an instance of a checkout
