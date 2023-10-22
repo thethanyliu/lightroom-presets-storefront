@@ -1,9 +1,16 @@
 import React from "react";
+import { useStateContext } from "@/context/StateContext";
+import { LoadingPage } from "..";
 
 const Layout = ({ children }) => {
+  const { isLoading } = useStateContext();
   return (
     <>
-      <main className="main-container">{children}</main>
+      {isLoading ? (
+        <LoadingPage />
+      ) : (
+        <main className="main-container">{children}</main>
+      )}
     </>
   );
 };

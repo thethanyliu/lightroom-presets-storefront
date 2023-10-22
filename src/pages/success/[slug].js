@@ -24,7 +24,6 @@ const successSlug = ({ products }) => {
   const purchasedItems = products.filter((product) =>
     ids.includes(product._id)
   );
-  console.log(purchasedItems);
 
   const getUrlFromId = (ref) => {
     const [_file, id, extension] = ref.split("-");

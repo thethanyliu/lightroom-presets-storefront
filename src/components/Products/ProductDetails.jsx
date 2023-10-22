@@ -1,5 +1,4 @@
 import React from "react";
-import { setCookie, deleteCookie } from "cookies-next";
 import getStripe from "@/lib/getStripe";
 import { useStateContext } from "@/context/StateContext";
 import { Button } from "@nextui-org/react";
@@ -8,41 +7,44 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { toast } from "react-hot-toast";
 import styles from "./ProductDetails.module.css";
 
-const ProductDetails = ({ product, name, price, presetNumber }) => {
-  const {
-    onAddToCart,
-    cartItems,
-    totalPrice,
-    setTotalPrice,
-    setTotalQty,
-    setCartItems,
-  } = useStateContext();
+const ProductDetails = ({ product, name, price, presetNumber, slug }) => {
+  const { onAddToCart, cartItems, setIsLoading } =
+    useStateContext();
 
   const handleBuyNow = async () => {
+    setIsLoading(true);
     const stripe = await getStripe();
-    const newCartItems = [...cartItems, { ...product, quantity: 1 }];
+    const productInCart = cartItems.find((item) => item.name === product.name);
 
-    setCartItems(newCartItems);
+    let newCartItems;
+    if (productInCart) {
+      newCartItems = cartItems.map((item) =>
+        item.name === product.name
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      );
+    } else {
+      newCartItems = [...cartItems, { ...product, quantity: 1 }];
+    }
 
     const res = await fetch("/api/stripe", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newCartItems),
+      body: JSON.stringify({ cartItems: newCartItems, slug }),
     });
 
     if (res.status === 500) {
-      return console.log("Error");
+      return new Error("Error");
     }
 
     const data = await res.json();
-
+    
+    onAddToCart(product, false);
+    
     toast.loading("Redirecting...");
-
-    setCartItems([]);
-    setTotalPrice(0);
-    setTotalQty(0);
+    setIsLoading(false);
 
     return stripe.redirectToCheckout({ sessionId: data.id }); // an instance of a checkout
   };
@@ -75,7 +77,6 @@ const ProductDetails = ({ product, name, price, presetNumber }) => {
           variant="ghost"
           onPress={() => {
             onAddToCart(product);
-            setCookie("totalPrice", totalPrice, {secure: true, sameSite: "strict"});
           }}
         >
           Add to Cart

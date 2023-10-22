@@ -8,9 +8,11 @@ import { toast } from "react-hot-toast";
 import styles from "./CartInfo.module.css";
 
 const CartInfo = () => {
-  const { totalPrice, cartItems, removeFromCart } = useStateContext();
+  const { totalPrice, cartItems, removeFromCart, setIsLoading } =
+    useStateContext();
 
   const handleCheckout = async () => {
+    setIsLoading(true);
     const stripe = await getStripe();
 
     const res = await fetch("/api/stripe", {
@@ -18,7 +20,7 @@ const CartInfo = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(cartItems),
+      body: JSON.stringify({ cartItems: cartItems, slug: "checkout" }),
     });
 
     if (res.status === 500) {
@@ -26,8 +28,10 @@ const CartInfo = () => {
     }
 
     const data = await res.json();
-    toast.loading("Redirecting...");
 
+    toast.loading("Redirecting...");
+    setIsLoading(false);
+    
     return stripe.redirectToCheckout({ sessionId: data.id }); // an instance of a checkout
   };
 

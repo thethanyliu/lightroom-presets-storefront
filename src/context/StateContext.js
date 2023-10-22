@@ -8,6 +8,7 @@ export const StateContext = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalQty, setTotalQty] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const cart = window.localStorage.getItem("CART_ITEM");
@@ -25,7 +26,7 @@ export const StateContext = ({ children }) => {
     window.localStorage.setItem("TOTAL_QUANTITY", JSON.stringify(totalQty));
   }, [cartItems, totalPrice, totalQty]);
 
-  const onAddToCart = (product) => {
+  const onAddToCart = (product, displayToast = true) => {
     const productInCart = cartItems.find((item) => item.name === product.name);
     setTotalPrice((prev) => prev + product.price);
     setTotalQty((prev) => prev + 1);
@@ -44,7 +45,10 @@ export const StateContext = ({ children }) => {
     } else {
       setCartItems([...cartItems, { ...product, quantity: 1 }]);
     }
-    toast.success(`1 ${product.name} added to cart!`);
+
+    if (displayToast) {
+      toast.success(`1 ${product.name} added to cart!`);
+    }
   };
 
   const removeFromCart = (product) => {
@@ -74,7 +78,6 @@ export const StateContext = ({ children }) => {
       }
       return parseFloat(rounded);
     });
-
   };
 
   return (
@@ -90,6 +93,8 @@ export const StateContext = ({ children }) => {
         removeFromCart,
         totalQty,
         setTotalQty,
+        isLoading,
+        setIsLoading,
       }}
     >
       {children}

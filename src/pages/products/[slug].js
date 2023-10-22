@@ -12,12 +12,11 @@ import {
   Recommended,
 } from "../../components";
 
-const ProductSlug = ({ product, products }) => {
+const ProductSlug = ({ product, products, slug }) => {
   const { productImage, images, name, price, relatedProducts, presetNumber } =
     product;
 
   const copyWrite = `The ${name} includes files for both Lightroom mobile (DNG files) and Lightroom desktop (XMP files). All of which you get to keep forever!`;
-
   return (
     <>
       <Head>
@@ -36,6 +35,7 @@ const ProductSlug = ({ product, products }) => {
             name={name}
             price={price}
             presetNumber={presetNumber}
+            slug={slug}
           />
         </div>
         <Info />
@@ -71,7 +71,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
   const products = await client.fetch(productsQuery);
 
   return {
-    props: { product, products },
+    props: { product, products, slug },
     revalidate: 60 * 60 * 24, // seconds
   };
 };

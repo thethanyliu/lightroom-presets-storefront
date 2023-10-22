@@ -127,25 +127,55 @@ const Navbar = ({
         </div>
         <div className={styles.linksContainer}>
           <ul className={styles.navbarUl}>
-            {navLinks?.map((navLink, i) => (
-              <li
-                key={i}
-                className={styles.linkItem}
-                style={
-                  !menuBar && !darkMode
-                    ? pathname === navLink.link
-                      ? linkStyleDesktopLightUnderline
-                      : linkStyleDesktopLight
-                    : pathname === navLink.link
-                    ? linkStyleDesktopDarkUnderline
-                    : linkStyleDesktopDark
-                }
-              >
-                <Link key={navLink.name} href={navLink.on ? navLink.link : "#"}>
-                  <span>{navLink.name}</span>
-                </Link>
-              </li>
-            ))}
+            {navLinks?.map((navLink, i) => {
+              if (navLink.name === "Products") {
+                return (
+                  <li
+                    key={i}
+                    className={styles.linkItem}
+                    style={
+                      !menuBar && !darkMode
+                        ? pathname.slice(0, 9) === navLink.link
+                          ? linkStyleDesktopLightUnderline
+                          : linkStyleDesktopLight
+                        : pathname.slice(0, 9) === navLink.link
+                        ? linkStyleDesktopDarkUnderline
+                        : linkStyleDesktopDark
+                    }
+                  >
+                    <Link
+                      key={navLink.name}
+                      href={navLink.on ? navLink.link : "#"}
+                    >
+                      <span>{navLink.name}</span>
+                    </Link>
+                  </li>
+                );
+              } else {
+                return (
+                  <li
+                    key={i}
+                    className={styles.linkItem}
+                    style={
+                      !menuBar && !darkMode
+                        ? pathname === navLink.link
+                          ? linkStyleDesktopLightUnderline
+                          : linkStyleDesktopLight
+                        : pathname === navLink.link
+                        ? linkStyleDesktopDarkUnderline
+                        : linkStyleDesktopDark
+                    }
+                  >
+                    <Link
+                      key={navLink.name}
+                      href={navLink.on ? navLink.link : "#"}
+                    >
+                      <span>{navLink.name}</span>
+                    </Link>
+                  </li>
+                );
+              }
+            })}
           </ul>
         </div>
         <div className={styles.cartContainer}>

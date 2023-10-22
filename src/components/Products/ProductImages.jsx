@@ -17,14 +17,19 @@ const ProductImages = ({ productImage, images }) => {
           }
           width={500}
           height={500}
+          priority={true}
         />
-        <Image
-          src={imageIndex !== 0 && urlFor(images[imageIndex - 1]).url()}
-          alt="product image"
-          className={imageIndex !== 0 ? styles.otherImagesLarge : styles.hidden}
-          width={400}
-          height={400}
-        />
+        {imageIndex !== 0 && (
+          <Image
+            src={urlFor(images[imageIndex - 1]).url()}
+            alt="product image"
+            className={
+              imageIndex !== 0 ? styles.otherImagesLarge : styles.hidden
+            }
+            width={400}
+            height={400}
+          />
+        )}
         <div className={styles.otherImagesContainer}>
           <Image
             src={urlFor(productImage).url()}
@@ -39,6 +44,7 @@ const ProductImages = ({ productImage, images }) => {
               <Image
                 key={i}
                 src={urlFor(image).url()}
+                alt="other images"
                 className={styles.otherImages}
                 onClick={() => setImageIndex(i + 1)}
                 width={90}

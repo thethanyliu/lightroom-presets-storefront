@@ -1,18 +1,15 @@
 import Stripe from "stripe";
-import { getCookies } from "cookies-next";
 
 const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
-  const orderDetails = getCookies({ req, res });
-
   if (req.method === "POST") {
     try {
       // Create Checkout Sessions from body params.
       let slug = "";
-      req.body.forEach(element => {
-        slug += element._id + "_"
-        return
+      req.body.cartItems.forEach((element) => {
+        slug += element._id + "_";
+        return;
       });
 
       const params = {
@@ -20,7 +17,7 @@ export default async function handler(req, res) {
         mode: "payment",
         payment_method_types: ["card"],
         billing_address_collection: "auto",
-        line_items: req.body.map((item) => {
+        line_items: req.body.cartItems.map((item) => {
           const img = item.productImage.asset._ref;
           const newImage = img
             .replace(
@@ -46,7 +43,9 @@ export default async function handler(req, res) {
           };
         }),
         success_url: `${req.headers.origin}/success/${slug}`,
-        cancel_url: `${req.headers.origin}/`,
+        cancel_url: req.body.slug !== "checkout"
+          ? `${req.headers.origin}/products/${req.body.slug}`
+          : `${req.headers.origin}/checkout`,
       };
 
       const session = await stripe.checkout.sessions.create(params);
