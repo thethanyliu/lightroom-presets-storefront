@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { urlFor } from "@/lib/client";
 import { useStateContext } from "@/context/StateContext";
 import getStripe from "@/lib/getStripe";
@@ -29,7 +30,7 @@ const CartInfo = () => {
     const data = await res.json();
 
     setIsLoading(false);
-    
+
     return stripe.redirectToCheckout({ sessionId: data.id }); // an instance of a checkout
   };
 
@@ -38,7 +39,15 @@ const CartInfo = () => {
       <h2 className={styles.title}>Your Cart</h2>
       <div className={styles.innerContainer}>
         <div className={styles.cartItemsInnerWrapper}>
-          {cartItems.length < 1 && <span>Your shopping bag is empty</span>}
+          {cartItems.length < 1 && (
+            <span>
+              Your shopping bag is empty,{" "}
+              <Link href="products" className="underline text-[#0000EE]">
+                continue shopping
+              </Link>
+              .
+            </span>
+          )}
           <div className={styles.container}>
             {cartItems?.map((item, i) => (
               <div key={i} className={styles.cartProduct}>
